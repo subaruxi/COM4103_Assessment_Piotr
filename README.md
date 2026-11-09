@@ -18,7 +18,8 @@ TODO (2-4 sentences): who the users are, the problem HomeHub solves, and the use
 ---
 
 ## 2. Selected MVP features
-
+|ID   |Description|
+|-----|-----------|
 | F01 | Homepage with featured tips and projects
 | F02 | Category-based browsing (3+ categories) 
 | F03 | Keyword search 
@@ -94,12 +95,12 @@ TODO: adjust to match your final structure.
 
 ## 5. Comparison of existing platforms
 
-TODO: compare 4-5 home improvement or DIY platforms (what they offer, the technology if you can find it, and their gaps), then say what HomeHub does differently.
+TODO: compare 4-5 home improvement or DIY platforms (<what they offer, the technology if you can find it, and their gaps), then say what HomeHub does differently.
 
 | Platform           |                 Key features                   | Strengths | Gaps / weaknesses | Source |
 |--------------------|------------------------------------------------|-----------|-------------------|--------|
 |B&Q Ideas and Advice|<ul><li>Categories sorted out based on areas in a house<br><li>Each category has subcategories.<br><li>Search Bar.<br><li>A calculator is usable for cost purposes and how much of a product would be needed for a project<br><li>Guides for different types of equipment.<br><li>Health and safety guides.<br><li>Users can submit their projects to their social media page and tag @B&Q. |<ul><li>Easily Categorised so the user spends less time going through different sections<br><li>Step by step instructions make it easier to manage a complex task and reduces error happening in a project<br><li>Related Products that can show the user what they need to buy to do that task<br><li>Guides show what tools are needed for the job |<ul><li>Search bar only used for products so user has to follow the categories instead<br><li>Users can't rate or give feedback to others' creations<br><li>Guides don't show the difficulty level |(B&Q, n.d.)|                        
-|Wickes              |                                                
+|Wickes              |<ul><li>How to- Catergories<br><li> Videos in each category for a visual reference<br><li>Step by step with substeps on some of them<br><li>Search Bar<br><li>Quizzes to meet the users expectations and show advice close to what they need<br><li>Planning guides and buying guides<br><li>List of services to use such as a free design service which users can book online<br><li>Popular Projects<br><li>Calculators such as a paint, tiling and paving calculator|<ul><li>Search bar covers the products and different articles so users can search instead of scroll through pages of content<br><li>Planning guides and buying guides can give the users more control and design over their project<br><li>Quizzes can be personalised to the user so that they can get the support that is right for their project|<ul><li>Can't bookmark or save advice that is on the advice to the users account so they cant review their saved projects / advice that they need to follow<br><li>Users can't submit their own project / guides for other users to follow, this limits the projects that user can see|(Wickes, n.d.-a)<br>(Wickes, n.d.-b)                                             
 |Homebase            |                                                
 |Toolstation         |                                                
 |Screwfix            |                                               
@@ -230,5 +231,6 @@ Anthropic. (2026). *Claude* (Opus 5.5 / Sonnet 5.5) [Large language model]. http
 
 ## 16. References
 
-TODO: at least 10 quality references in APA 7 format (workshop materials, MDN, W3C/WCAG, framework documentation, platform sources, etc.).
 B&Q. (n.d.). *Ideas & advice*. Retrieved November 9, 2026, from https://www.diy.com/ideas-advice/1.hroot
+Wickes. (n.d.-a). *How to guides*. Retrieved November 9, 2026, from https://www.wickes.co.uk/how-to-guides
+Wickes. (n.d.-b). *My project list*. Retrieved November 9, 2026, from https://www.wickes.co.uk/project-list
