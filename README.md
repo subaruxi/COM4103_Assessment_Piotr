@@ -1,8 +1,8 @@
 # HomeHub: Front-End Prototype
 
-**Module:** COM4113 Tech Stack | **Assessment:** 1, Tech Stack Proposal (30%) | **Academic year:** 2026/27
-**Student:** Piotr Eksterowicz 2600823
-**Repository:** https://github.com/subaruxi/COM4103_Assessment_Piotr
+**Module:** COM4113 Tech Stack | **Assessment:** 1, Tech Stack Proposal (30%) | **Academic year:** 2026/27<br>
+**Student:** Piotr Eksterowicz 2600823<br>
+**Repository:** https://github.com/subaruxi/COM4103_Assessment_Piotr<br>
 **Deadline:** Wednesday 25 November 2026
 
 
@@ -100,8 +100,8 @@ TODO: compare 4-5 home improvement or DIY platforms (<what they offer, the techn
 | Platform           |                 Key features                   | Strengths | Gaps / weaknesses | Source |
 |--------------------|------------------------------------------------|-----------|-------------------|--------|
 |B&Q Ideas and Advice|<ul><li>Categories sorted out based on areas in a house<br><li>Each category has subcategories.<br><li>Search Bar.<br><li>A calculator is usable for cost purposes and how much of a product would be needed for a project<br><li>Guides for different types of equipment.<br><li>Health and safety guides.<br><li>Users can submit their projects to their social media page and tag @B&Q. |<ul><li>Easily Categorised so the user spends less time going through different sections<br><li>Step by step instructions make it easier to manage a complex task and reduces error happening in a project<br><li>Related Products that can show the user what they need to buy to do that task<br><li>Guides show what tools are needed for the job |<ul><li>Search bar only used for products so user has to follow the categories instead<br><li>Users can't rate or give feedback to others' creations<br><li>Guides don't show the difficulty level |(B&Q, n.d.)|                        
-|Wickes              |<ul><li>How to- Catergories<br><li> Videos in each category for a visual reference<br><li>Step by step with substeps on some of them<br><li>Search Bar<br><li>Quizzes to meet the users expectations and show advice close to what they need<br><li>Planning guides and buying guides<br><li>List of services to use such as a free design service which users can book online<br><li>Popular Projects<br><li>Calculators such as a paint, tiling and paving calculator|<ul><li>Search bar covers the products and different articles so users can search instead of scroll through pages of content<br><li>Planning guides and buying guides can give the users more control and design over their project<br><li>Quizzes can be personalised to the user so that they can get the support that is right for their project|<ul><li>Can't bookmark or save advice that is on the advice to the users account so they cant review their saved projects / advice that they need to follow<br><li>Users can't submit their own project / guides for other users to follow, this limits the projects that user can see|(Wickes, n.d.-a)<br>(Wickes, n.d.-b)                                             
-|Homebase            |                                                
+|Wickes              |<ul><li>How to- Categories<br><li> Videos in each category for a visual reference<br><li>Step by step with substeps on some of them<br><li>Search Bar<br><li>Quizzes to meet the users expectations and show advice close to what they need<br><li>Planning guides and buying guides<br><li>List of services to use such as a free design service which users can book online<br><li>Popular Projects<br><li>Calculators such as a paint, tiling and paving calculator|<ul><li>Search bar covers the products and different articles so users can search instead of scroll through pages of content unlike B&Q's search bar which only covers products<br><li>Planning guides and buying guides can help users choose specific products they need and plan out their project easier by giving them a plan through their project<br><li>Quizzes can be personalised to the user so that they can get the support that is right for their project|<ul><li>Can't bookmark or save advice to the users account / advice that they need to follow<br><li>Users can't submit their own project / guides for other users to follow, this limits the projects that user can see|(Wickes, n.d.-a)<br>(Wickes, n.d.-b)                                             
+|Homebase            |<ul><li>A limited amount of Categories<br><li>Step by step guides as well as showing varieties of ideas that are possible<br><li>Search Bar<br><li>Categories have products linked to them<br>|<ul><li>Articles are easy to read and dont take long to read<br><li>Articles show different approaches to tasks that can suit to the user<br><li>Inside of the articles are smaller tips that can improve the outcome of the project|<ul><li>The range of articles are too small and doesnt cover every area<br><li>Only a gardening guide for february and not for the rest of the months [See Here](img/homebase_gardening_guide_09-11-26.png)<br><li>No calculator on the website unlike Wickes & B&Q|(Homebase, n.d.)                                          
 |Toolstation         |                                                
 |Screwfix            |                                               
 
@@ -225,12 +225,15 @@ TODO: add any other use (for example help debugging code or understanding a conc
 **Reference:**
 Anthropic. (2026). *Claude* (Opus 5.5 / Sonnet 5.5) [Large language model]. https://claude.ai
 
-**Appendix:** TODO (screenshots or transcripts of AI use).
 
 ---
 
-## 16. References
+## 16. Appendix
+   **Figure 1.** Wickes project list page (accessed 9 Nov 2026)
+   [Wickes project list](img/wickes_project_list_09-11-26.png)
+## 17. References
 
-B&Q. (n.d.). *Ideas & advice*. Retrieved November 9, 2026, from https://www.diy.com/ideas-advice/1.hroot
-Wickes. (n.d.-a). *How to guides*. Retrieved November 9, 2026, from https://www.wickes.co.uk/how-to-guides
-Wickes. (n.d.-b). *My project list*. Retrieved November 9, 2026, from https://www.wickes.co.uk/project-list
+B&Q. (n.d.). *Ideas & advice*. Retrieved November 9, 2026, from https://www.diy.com/ideas-advice/1.hroot<br>
+Wickes. (n.d.-a). *How to guides*. Retrieved November 9, 2026, from https://www.wickes.co.uk/how-to-guides<br>
+Wickes. (n.d.-b). *My project list*. Retrieved November 9, 2026, from https://www.wickes.co.uk/project-list<br>
+Homebase. (n.d.). *Ideas & advice*. Retrieved November 9, 2026, from https://www.homebase.co.uk/ideas-advice/<br>
