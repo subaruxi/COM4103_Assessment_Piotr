@@ -98,7 +98,7 @@ TODO: compare 4-5 home improvement or DIY platforms (what they offer, the techno
 
 | Platform           |                 Key features                   | Strengths | Gaps / weaknesses | Source |
 |--------------------|------------------------------------------------|-----------|-------------------|--------|
-|B&Q Ideas and Advice|Categories sorted out based on areas in a house<br>Each category has subcategories.<br>The search is only used for products.<br>A calculator is usable for cost purposes<br>Guides for different types of equipment.<br>Health and safety guides.<br>Users can submit their projects. |Easily Catagorised<br>Step by step instructions<br>Related Products<br>Advice Authors<br>Guides show what tools are needed |Search bar only used for products so user has to contact someone instead<br>Users can rate or give feedback to others creations<br>Guides dont show the difficulty level |https://www.diy.com/ideas-advice/1.hroot|                        
+|B&Q Ideas and Advice|<ul><li>Categories sorted out based on areas in a house<br><li>Each category has subcategories.<br><li>Search Bar.<br><li>A calculator is usable for cost purposes and how much of a product would be needed for a project<br><li>Guides for different types of equipment.<br><li>Health and safety guides.<br><li>Users can submit their projects to their social media page and tag @B&Q. |<ul><li>Easily Categorised so the user spends less time going through different sections<br><li>Step by step instructions make it easier to manage a complex task and reduces error happening in a project<br><li>Related Products that can show the user what they need to buy to do that task<br><li>Guides show what tools are needed for the job |<ul><li>Search bar only used for products so user has to follow the categories instead<br><li>Users can't rate or give feedback to others' creations<br><li>Guides don't show the difficulty level |(B&Q, n.d.)|                        
 |Wickes              |                                                
 |Homebase            |                                                
 |Toolstation         |                                                
@@ -231,3 +231,4 @@ Anthropic. (2026). *Claude* (Opus 5.5 / Sonnet 5.5) [Large language model]. http
 ## 16. References
 
 TODO: at least 10 quality references in APA 7 format (workshop materials, MDN, W3C/WCAG, framework documentation, platform sources, etc.).
+B&Q. (n.d.). *Ideas & advice*. Retrieved November 9, 2026, from https://www.diy.com/ideas-advice/1.hroot
