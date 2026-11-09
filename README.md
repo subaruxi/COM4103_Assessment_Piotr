@@ -70,7 +70,14 @@ TODO: record any feature you drop or replace, the date, and why. The brief requi
 **Folder structure**
 
 ```
+index.html
+/img
 
+/css
+    style.css
+/js
+    script.js
+README.md
 ```
 
 TODO: adjust to match your final structure.
@@ -91,23 +98,11 @@ TODO: compare 4-5 home improvement or DIY platforms (what they offer, the techno
 
 | Platform           |                 Key features                   | Strengths | Gaps / weaknesses | Source |
 |--------------------|------------------------------------------------|-----------|-------------------|--------|
-|                    |Categories sorted out based on areas in a house.|
-|                    |each category has subcategories.                |
-|                    |the search is only used for products.           |
-|B&Q Ideas and Advice|a calculator is usable for cost purposes        |
-|                    |and how much resources are required.            |
-|                    |guides for different types of equipment.        |
-|                    |health and safety guides.                       |
-|                    |users can submit their projects.                |
-|--------------------|------------------------------------------------|                                      
-|Wickes              |                                                |
-|--------------------|------------------------------------------------|
-|Homebase            |                                                |
-|--------------------|------------------------------------------------|
-|Toolstation         |                                                |
-|--------------------|------------------------------------------------|
-|Screwfix            |                                                |
-|--------------------|------------------------------------------------|
+|B&Q Ideas and Advice|Categories sorted out based on areas in a house<br>Each category has subcategories.<br>The search is only used for products.<br>A calculator is usable for cost purposes<br>Guides for different types of equipment.<br>Health and safety guides.<br>Users can submit their projects. |Easily Catagorised<br>Step by step instructions<br>Related Products<br>Advice Authors<br>Guides show what tools are needed |Search bar only used for products so user has to contact someone instead<br>Users can rate or give feedback to others creations<br>Guides dont show the difficulty level |https://www.diy.com/ideas-advice/1.hroot|                        
+|Wickes              |                                                
+|Homebase            |                                                
+|Toolstation         |                                                
+|Screwfix            |                                               
 
 **Evaluation:** TODO (gaps HomeHub can fill, and how that shaped your feature choices).
 
