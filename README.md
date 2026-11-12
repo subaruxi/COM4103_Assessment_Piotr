@@ -108,15 +108,28 @@ TODO: adjust to match your final structure.
 |Toolstation         |<ul><li>A large range of subcategories<br><li>Essential tools and equipment shown in article<br><li>Step by step guides<br><li>Search bar works for products and ***Articles***(More in Strengths seciton)<br><li>Help and Advice sections such as returns information and buying guides|<ul><li>Almost every advice someone can think of is listed in this How to Section which makes it easier for the user to find help on their specific need<br><li> The search bar redirects the user to the How to section if the search parameter contains ***How To*** [See Video](videos/toolstation_search_video_10-11-26.mp4)<br><li>Frequently asked questions section can answer questions that were not present in the advice<br><li>Usefull guides section in the footer has more guides the users can follow [See Image](img/toolstation_useful_guides_10-11-26.png)|<ul><li>The menus can get cluttered due to the amount of sections that are in some categories so the user has to scroll for a while until they reach the next category [See zoomed out image](img/toolstation_zoomed_out_10-11-26.png)|Toolstation. (n.d.-a)<br> Toolstation. (n.d.-b)                                               
                                                
 
-**Evaluation:** TODO (gaps HomeHub can fill, and how that shaped your feature choices).
+**Evaluation:**
+
+Overall all 4 of the sites that were listed in the table have things in common, all of the webistes have their advice split into categories to make it easier for the user to navigate around the website, some of the websites have calculators, each website has a searchbar but they use it in their own ways. Each website has their advice split into step by step instructions so that the user can follow complex task easier.   
+|Gap|Seen On|How Homehub addresses this gap|
+|---|-------|------------------------------|
+|Search Bar only show products|<ul><li>B&Q<br><li>Homebase<br>|Homehub addresses this by having the search bar also index the articles in the users search as well as related products|
+|Difficulty Level not shown on articles|<ul><li>B&Q<br><li>Wickes<br><li>Homebase<br><li>Toolstation|Homehub will address this issue by showing the difficulty level at the top of the article as well as showing how long it would take to read / complete it|
+|No Calculators|<ul><li>Homebase|Homehub will address this gap by including calculators for things such as cost and resource calculators|
+|Cluttered Navigation|<ul><li>Toolstation|Homehub will address this issue by having filters for each category as well as changing the way subcategories are shown by collapsing them into a menu|
+|Not allowed to save advice|<ul><li>Wickes<br><li>B&Q<br><li>Toolstation<br><li>Homebase|Homehub will address this by letting users create an account and allow them to favourite advice that they want to save|
+
+Homehub keeps the strengths of Wickes by having a wide variety of categories as well as having a search bar that indexes advices as well as products, it also keeps the strengths of B&Q by having similar calculators but expanding on the formula that B&Q already uses for their calculators<br>
+All of the platforms that were in this comparison were done without making accounts so there could have been a limit to what could've been shown in these websites and therefore limiting the comparison between them.
 
 ---
 
 ## 6. User journey and design
 
-TODO: insert the visual user journey diagram (`images/user-journey.png`).
+TODO: insert the visual user journey diagram
 
 **Design decisions:** TODO (layout, colour palette and contrast, typography, responsive approach). Keep any wireframes in `images/` and link them here.<br>
+
 **Wireframes** [Home Page](img/wireframes/Home%20(desktop).png)<br>
 
 ---
