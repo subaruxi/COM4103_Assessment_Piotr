@@ -71,13 +71,17 @@ TODO: record any feature you drop or replace, the date, and why. The brief requi
 **Folder structure**
 
 ```
-index.html
-/img
-
-/css
+css/
     style.css
-/js
-    script.js
+data/
+img/
+    wireframes/
+js/
+node_modules/
+videos/
+index.html
+package-lock.json
+package.json
 README.md
 ```
 
@@ -95,7 +99,6 @@ TODO: adjust to match your final structure.
 
 ## 5. Comparison of existing platforms
 
-TODO: compare 4-5 home improvement or DIY platforms (<what they offer, the technology if you can find it, and their gaps), then say what HomeHub does differently.
 
 | Platform           |                 Key features                   | Strengths | Gaps / weaknesses | Source |
 |--------------------|------------------------------------------------|-----------|-------------------|--------|
@@ -103,7 +106,7 @@ TODO: compare 4-5 home improvement or DIY platforms (<what they offer, the techn
 |Wickes              |<ul><li>How to- Categories<br><li> Videos in each category for a visual reference<br><li>Step by step with substeps on some of them<br><li>Search Bar<br><li>Quizzes to meet the users expectations and show advice close to what they need<br><li>Planning guides and buying guides<br><li>List of services to use such as a free design service which users can book online<br><li>Popular Projects<br><li>Calculators such as a paint, tiling and paving calculator|<ul><li>Search bar covers the products and different articles so users can search instead of scroll through pages of content unlike B&Q's search bar which only covers products<br><li>Planning guides and buying guides can help users choose specific products they need and plan out their project easier by giving them a plan through their project<br><li>Quizzes can be personalised to the user so that they can get the support that is right for their project|<ul><li>Can't bookmark or save advice to the users account / advice that they need to follow<br><li>Users can't submit their own project / guides for other users to follow, this limits the projects that user can see|(Wickes, n.d.-a)<br>(Wickes, n.d.-b)                                             
 |Homebase            |<ul><li>A limited amount of Categories<br><li>Step by step guides as well as showing varieties of ideas that are possible<br><li>Search Bar<br><li>Categories have products linked to them<br>|<ul><li>Articles are easy to read and dont take long to read<br><li>Articles show different approaches to tasks that can suit to the user<br><li>Inside of the articles are smaller tips that can improve the outcome of the project|<ul><li>The range of articles are too small and doesnt cover every area<br><li>Only a gardening guide for february and not for the rest of the months [See Here](img/homebase_gardening_guide_09-11-26.png)<br><li>No calculator on the website unlike Wickes & B&Q|(Homebase, n.d.)                                          
 |Toolstation         |<ul><li>A large range of subcategories<br><li>Essential tools and equipment shown in article<br><li>Step by step guides<br><li>Search bar works for products and ***Articles***(More in Strengths seciton)<br><li>Help and Advice sections such as returns information and buying guides|<ul><li>Almost every advice someone can think of is listed in this How to Section which makes it easier for the user to find help on their specific need<br><li> The search bar redirects the user to the How to section if the search parameter contains ***How To*** [See Video](videos/toolstation_search_video_10-11-26.mp4)<br><li>Frequently asked questions section can answer questions that were not present in the advice<br><li>Usefull guides section in the footer has more guides the users can follow [See Image](img/toolstation_useful_guides_10-11-26.png)|<ul><li>The menus can get cluttered due to the amount of sections that are in some categories so the user has to scroll for a while until they reach the next category [See zoomed out image](img/toolstation_zoomed_out_10-11-26.png)|Toolstation. (n.d.-a)<br> Toolstation. (n.d.-b)                                               
-|Screwfix            |                                               
+                                               
 
 **Evaluation:** TODO (gaps HomeHub can fill, and how that shaped your feature choices).
 
@@ -113,7 +116,8 @@ TODO: compare 4-5 home improvement or DIY platforms (<what they offer, the techn
 
 TODO: insert the visual user journey diagram (`images/user-journey.png`).
 
-**Design decisions:** TODO (layout, colour palette and contrast, typography, responsive approach). Keep any wireframes in `images/` and link them here.
+**Design decisions:** TODO (layout, colour palette and contrast, typography, responsive approach). Keep any wireframes in `images/` and link them here.<br>
+**Wireframes** [Home Page](img/wireframes/Home%20(desktop).png)<br>
 
 ---
 
@@ -217,7 +221,7 @@ TODO: what changed from your original timeline, what challenges you faced and ho
 I used generative AI (Claude, Anthropic) to:
 - suggest a task breakdown and Gantt chart structure for the project plan, which I reviewed and adjusted;
 - summarise the assessment brief and list the PRD feature catalogue, to aid my understanding;
-- generate a Figma layout for a HomeHub browse page. **This design is AI-generated** and I used it as inspiration/reference: TODO (state how you used or changed it);
+- generate wireframes for the website in figma. **This design is AI-generated** I plan on using it as a guideline on what features i should add to my final design of the website 
 - draft the structure of this README. The content, justifications and reflections are my own.
 
 TODO: add any other use (for example help debugging code or understanding a concept) and confirm the statement for the work you actually submit.
@@ -230,7 +234,9 @@ Anthropic. (2026). *Claude* (Opus 5.5 / Sonnet 5.5) [Large language model]. http
 
 ## 16. Appendix
    **Figure 1.** Wickes project list page (accessed 9 Nov 2026)
-   [Wickes project list](img/wickes_project_list_09-11-26.png)
+   [Wickes project list](img/wickes_project_list_09-11-26.png)<br>
+   **Figure 2.** Figma Wireframes made by Claude(accessed 10 Nov 2026)
+   [Website Wireframes Folder](img/wireframes/)
 ## 17. References
 
 B&Q. (n.d.). *Ideas & advice*. Retrieved November 9, 2026, from https://www.diy.com/ideas-advice/1.hroot<br>
