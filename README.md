@@ -126,11 +126,41 @@ All of the platforms that were in this comparison were done without making accou
 
 ## 6. User journey and design
 
-TODO: insert the visual user journey diagram
+[User Journey](img/user_journey_12-11-26.png)
 
-**Design decisions:** TODO (layout, colour palette and contrast, typography, responsive approach). Keep any wireframes in `images/` and link them here.<br>
+**Design decisions:** TODO (layout,  and contrast, typography, responsive approach).<br>
+The layout for the website is going for a simple approach.The simple style is minimalistic but will still have life due to the colour palette that i am using because the colours match what Homehub is about which is housing and gardening . This makes it easy for the users to navigate around the website as there wont be alot of clutter like other websites such as Toolstation, Toolstation. (n.d.-a). Cards will be on majority of the pages for this website as it makes it easy to compact information inside of them and saves space around the pages on the websites, they also are easy to see and navigate as the user just has to click on them to be taken to a project. The cards will also show condensed information such as the difficulty of the project as well as the time and cost of the project There will be checkboxes on the home menu so that the user can filter out different projects to their liking. A search bar will also be present throughout all of the pages on the website inside of the header. this makes it easy for users to search for projects wherever on the website without having to return back to the homepage.<br>
 
-**Wireframes** [Home Page](img/wireframes/Home%20(desktop).png)<br>
+Contrast was tested for the colour palette using WebAIM, i checked for WCAG 2.2 AA with this website on the colour palette. The body uses a dark colour on a light colour which provides a contrast of 15.52:1 for the background and the colour for the cards gives a value of 12.54:1. Some of the text had failed the contrast check on some cases but still passed on cases such as the big text, the light on green contrast gave a value of 3.92:1 which made it fail on small text but still passed on big text for the WCAG AA and the graphical objects. the black on orange contrast ratio came to a value of 5.21:1 it passed all the catagories except WCAG AAA. WebAIM. (n.d.).<br>
+
+For the font for the website, the headings are going to use the Fraunces font and the body is going to use the Inter font, these fonts are free to use due to them being available on google fonts. The size of the body text will be kept to 16px 
+
+[Contrast Checks](img/Accessibilty_Checks/)<br>
+
+[Colour Palette](img/Colour_Palette.png)<br>
+
+
+**Wireframes V1**<br>
+[Home Page](img/wireframes/Home(desktop).png)<br>
+[Browse & Search](img/wireframes/Browse(desktop).png)<br>
+[Project Detail](img/wireframes/Project_Detail(desktop).png)<br>
+[Submit A tip](img/wireframes/submit_tip(desktop).png)<br>
+[Login & Register](img/wireframes/Login_Register(desktop).png)<br>
+[Profile](img/wireframes/Profile_page(desktop).png)<br>
+[About & Contact](img/wireframes/About_page(desktop).png)<br>
+[Safety & Accessibility Guidence](img/wireframes/Safety_Accessibility(desktop).png)
+
+**Wireframes V2**<br>
+[Home Page](img/wireframes/v2_Home(desktop).png)<br>
+[Browse & Search](img/wireframes/v2_browse_search(desktop).png)<br>
+[Project Detail](img/wireframes/v2_project_detail(desktop).png)<br>
+[Submit A tip](img/wireframes/v2_tip(desktop).png)<br>
+[Login & Register](img/wireframes/v2_Login_Register(desktop).png)<br>
+[Profile](img/wireframes/v2_profile(desktop).png)<br>
+[About & Contact](img/wireframes/v2_About_Page(desktop.png))<br>
+[Safety & Accessibility Guidence](img/wireframes/v2_safety_accessibility(desktop).png)
+
+
 
 ---
 
@@ -234,7 +264,7 @@ TODO: what changed from your original timeline, what challenges you faced and ho
 I used generative AI (Claude, Anthropic) to:
 - suggest a task breakdown and Gantt chart structure for the project plan, which I reviewed and adjusted;
 - summarise the assessment brief and list the PRD feature catalogue, to aid my understanding;
-- generate wireframes for the website in figma. **This design is AI-generated** I plan on using it as a guideline on what features i should add to my final design of the website 
+- generate wireframes for the website in figma. The designs are not final and will be changed in the final product as they will be created by me
 - draft the structure of this README. The content, justifications and reflections are my own.
 
 TODO: add any other use (for example help debugging code or understanding a concept) and confirm the statement for the work you actually submit.
@@ -258,3 +288,4 @@ Wickes. (n.d.-b). *My project list*. Retrieved November 9, 2026, from https://ww
 Homebase. (n.d.). *Ideas & advice*. Retrieved November 9, 2026, from https://www.homebase.co.uk/ideas-advice/<br>
 Toolstation. (n.d.-a). *Help & advice*. Retrieved November 9, 2026, from https://www.toolstation.com/help-and-advice<br>
 Toolstation. (n.d.-b). *How-to guides*. Retrieved November 9, 2026, from https://www.toolstation.com/help-and-advice/how-to-guides<br>
+WebAIM. (n.d.). *Contrast checker*. Retrieved November 12, 2026, from https://webaim.org/resources/contrastchecker/<br>
