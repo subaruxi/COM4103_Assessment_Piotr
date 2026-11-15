@@ -3,9 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>HomeHub</title>
 </head>
 <body>
-    
+<nav class="navigation-pane">
+    <a class="logo" href="#"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">Saved</a></li>
+        <li class="search-bar"><input type="search" placeholder="Search.."><button class="submit-tip"><img src=>Submit a Tip</button><button class="log-in">Log In</button></li>
+    </ul>
+</nav>
+<section class="hero">
+<div class ="main-header">
+    <h1>Find and Share Home<br> Improvement Ideas</h1>
+    <h5>Step-by step guides with honest cost,<br>photos and answers from the community</h5><br>
+    <input type="search" class="hero-search" placeholder="Search..">
+    <button class="search-button-hero">Search</button>
+    <br>
+    <div>
+    <ul>
+        <li>Popular:</li>
+        <li>Raised Bed</li>
+        <li>Fence Panel</li>
+        <li>Shelving</li>
+    </ul>
+    </div>
+</div>
+<div class ="hero-img">
+    <img src="img/hero-finished-project.jpg" alt="hero image">
+</div>
+</section>
+<section class="browse_category">
+    <h3>Browse by Room or Job</h3>
+    <a>Browse all Categories -></a>
+    <div class="tile-row">
+<a class="tile" href="">
+    <img src="img/tree.svg">
+    <span class="title-name">Garden</span>
+    <span class="title-count">212 Projects</span>
+</a>
+<a class="tile" href="">
+    <img src="img/fork-knife.svg">
+    <span class="title-name">Kitchen</span>
+    <span class="title-count">148 Projects</span>
+</a>
+<a class="tile" href="">
+    <img src="img/tree.svg">
+    <span class="title-name">Bathroom</span>
+    <span class="title-count">131 Projects</span>
+</a>
+<a class="tile" href="">
+    <img src="img/tree.svg">
+    <span class="title-name">Decorating</span>
+    <span class="title-count">190 Projects</span>
+</a>
+<a class="tile" href="">
+    <img src="img/tree.svg">
+    <span class="title-name">Flooring</span>
+    <span class="title-count">87 Projects</span>
+</a>
+<a class="tile" href="">
+    <img src="img/tree.svg">
+    <span class="title-name">Storage</span>
+    <span class="title-count">96 Projects</span>
+</a>
+</div>
+</section>
+<section class="featured-cards">
+    <h3>Featured this Week</h3>
+    <a>See All Projects</a>
+        <div class="tile-row">
+<a class="tile" href="">
+    <img src="">
+    <p>Garden</p>
+    <h4>Build a raised bed in a weekend</h4>
+    <ul>
+        <li>Beginner</li>
+        <li>2 Hours</li>
+        <li>£90</li>
+    </ul>
+</a>
+<a class="tile" href="">
+    <img src="">
+</a>
+<a class="tile" href="">
+    <img src="">
+</a>
+<a class="tile" href="">
+    <img src="">
+</a>
+</div>
+</section>
+
+<script>
+    // Toggle the mobile navigation menu
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+        var nav = document.querySelector('.navigation-pane');
+        var isOpen = nav.classList.toggle('open');
+        this.setAttribute('aria-expanded', isOpen);
+    });
+</script>
+
 </body>
 </html>
