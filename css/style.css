@@ -12,7 +12,7 @@ h1{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background-color: #F4F6F2;
+    background-color: #DCe0d9;
 
     ul{
         list-style-type: none;
@@ -85,6 +85,7 @@ h1{
         padding: 0 12px;
         border:1px solid #181f1c;
         border-radius: 4px;
+        width:600px
     }
     li .submit-tip{
         height:36px;
@@ -104,7 +105,14 @@ h1{
         cursor:pointer;
 
     }
-    
+    /* Same hover shadow as the question boxes and the ask/tip buttons */
+    li.search-bar button{
+        transition: box-shadow 0.2s ease;
+    }
+    li.search-bar button:hover,
+    li.search-bar button:focus-visible{
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
 }
 
 .hero{
@@ -112,13 +120,14 @@ h1{
     align-items: center;
     gap: 32px;
     padding: 3% 5%;
-    background-color:#bdbdbd
+    background-color:#F4F6F2
 }
 
 .main-header{
     flex: 1 1 55%;
     padding: 10px;
     color:#181F1C;
+    
 
     .hero-search{
         height: 36px;
@@ -170,7 +179,6 @@ h1{
 
     > a{
         margin-left: auto;
-        text-decoration:none;
         color:#181F1C;
     }
     a:hover{
@@ -255,7 +263,12 @@ h1{
     border-radius: 8px;
     text-decoration: none;
     color: inherit;
+    transition: box-shadow 0.2s ease;
 }
+    .tile:hover,
+    .tile:focus-visible{
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
     .tile-row {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -269,25 +282,60 @@ h1{
 .featured-cards{
     /* No top padding: .browse_category's bottom padding already separates the two sections */
     padding: 0 6% 6%;
-    
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+    }
+    a{
+        color:#181F1C;
+    }
+    a:hover{
+        cursor:pointer;
+    }
+
     .tile {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 0.5rem;
     padding: 1.5rem 1rem;
     border: 1px solid #bdbdbd;
     border-radius: 8px;
     text-decoration: none;
     color: inherit;
+    overflow: hidden; /* clips the image to the card's rounded corners */
+    transition: box-shadow 0.2s ease;
 }
+    .tile:hover,
+    .tile:focus-visible{
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
     .tile-row {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1rem;
 }
+
+    /* Image spans the full card width, cancelling the tile's padding */
     .tile-row img{
-        width:20%
+        width: calc(100% + 2rem);
+        margin: -1.5rem -1rem 0;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        display: block;
+    }
+    /* Text scales with the viewport: clamp(min, preferred, max) */
+    .tile p{
+        margin: 0;
+        font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1rem);
+    }
+    .tile h4{
+        margin: 0;
+        font-size: clamp(1rem, 0.85rem + 0.8vw, 1.5rem);
     }
 }
 .featured-cards{
@@ -296,18 +344,212 @@ h1{
         margin:0;
         padding:0;
         display: flex;
-        flex: 1;
+        flex-wrap: wrap; /* items drop to a new line on narrow cards */
         align-items: center;
+        gap: clamp(0.5rem, 0.3rem + 1vw, 1rem);
     }
     li{
         display: flex;
         align-items: center;
-        height: 56px;
         color:#181F1C;
-        text-align: center;
-        padding:16px;
+        padding: 0;
         text-decoration: none;
-        font-size: 16px;
+        font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1rem);
+    }
+}
+.info-area{
+    /* No top padding: .featured-cards' bottom padding already separates the two sections */
+    padding: 0 6% 4rem; /* bottom matches .help-list's top margin */
+    .help-list{
+        list-style-type: none;
+        /* Same space above as .info-area has below, so the list sits vertically centred
+           between the heading and the divider line */
+        margin: 4rem 0 0;
+        padding:0;
+        color:#181F1C;
+        /* Equal-width columns; they stack into fewer columns on narrow screens */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: clamp(1rem, 0.5rem + 2vw, 2.5rem);
+        counter-reset: step; /* start numbering at 1 for this list */
+    }
+    /* Description text wraps within its column */
+    .help-list li{
+        min-width: 0; /* lets long text shrink and wrap inside its column */
+        overflow-wrap: break-word;
+        text-wrap: pretty; /* avoids a single word left alone on the last line */
+        counter-increment: step;
+        position: relative;
+        padding-left: 3rem; /* room for the number circle */
+    }
+    /* Numbered circle beside each step (1, 2, 3...) */
+    .help-list li::before{
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: #181F1C;
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .help-list h4{
+        margin: 0 0 0.5rem;
+    }
+}
+/* Wraps the FAQ list and the "Stuck on a Job?" card so they sit side by side */
+.questions-area{
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    /* Margin (not padding) on the sides so the divider line lines up with the page content */
+    margin: 0 6%;
+    padding: 4rem 0 3rem;
+    border-top: 1px solid rgba(24, 31, 28, 0.2); /* divider between "How Homehub Works" and the questions */
+}
+.frequent-questions{
+    flex: 2;
+    h3{
+        margin: 0 0 1.5rem;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+        max-width: 600px; /* stops the question boxes stretching across the whole column */
+        list-style:none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    /* The link fills the whole box, so anywhere inside it is clickable */
+    a{
+          display: block;
+          border: 1px solid #181F1C;
+          border-radius: 5px;
+          padding:1rem;
+          color: #181F1C;
+          text-decoration: none;
+          transition: box-shadow 0.2s ease;
+    }
+    a:hover,
+    a:focus-visible{
+        cursor:pointer;
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+}
+.ask-question{
+    flex: 1;
+    background-color:#558564;
+    border-radius: 10px;
+    padding: 2rem;
+    /* Soft drop shadow so the card lifts off the white page */
+    box-shadow: 0 10px 30px rgba(24, 31, 28, 0.2);
+    margin-top: 3.5rem; /* lines the card up with the first question rather than the heading */
 
+    h4{
+        margin: 0 0 0.75rem;
+        color:#F4F6F2;
+    }
+    p{
+        margin: 0 0 1.5rem;
+        line-height: 1.5;
+        color:#F4F6F2;
+    }
+    .ask-buttons{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    /* Same hover shadow as the question boxes */
+    .ask-buttons button{
+        transition: box-shadow 0.2s ease;
+    }
+    .ask-buttons button:hover,
+    .ask-buttons button:focus-visible{
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+
+    .ask-button{
+        height:36px;
+        padding: 0 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #181f1c;
+        cursor:pointer;
+        color:#F4F6F2
+    }
+    .tip-button{
+        height:36px;
+        padding: 0 16px;
+        border: none;
+        border-radius: 4px;
+        background-color:white;
+        cursor:pointer;
+        color:#181F1C;
+    }
+}
+/* Stack the FAQ list and the ask card on smaller screens */
+@media (max-width: 768px){
+    .questions-area{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .ask-question{
+        margin-top: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.footer-area{
+    background-color:#DCe0d9;
+    padding:3% 6%;
+    /* The flex layout goes on <footer>, because that's the element holding the brand and the lists */
+    footer{
+        display:flex;
+        align-items:flex-start;
+        gap:6rem; /* space between the brand and the lists */
+    }
+    /* Capped width so the tagline wraps instead of pushing the lists onto a new line */
+    .footer-brand{
+        flex: 0 1 320px;
+        h4{
+            margin-top: 0;
+        }
+    }
+    /* The three lists side by side as columns */
+    .footer-links{
+        display:flex;
+        gap:4rem;
+    }
+    ul{
+        margin:0;
+        padding:0;
+        list-style:none;
+        display:flex;
+        flex-direction:column;
+        gap: 0.5rem;
+    }
+    a{
+        color:#181F1C
+    }
+    a:hover{
+        cursor:pointer
+    }
+}
+/* Small screens: brand on top, then the link columns, which wrap if needed */
+@media (max-width: 768px){
+    .footer-area footer{
+        flex-direction: column;
+    }
+    .footer-area .footer-links{
+        flex-wrap: wrap;
+        gap: 2rem;
     }
 }
