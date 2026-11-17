@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homehub Log in</title>
+</head>
+<body>
+    <nav class="navigation-pane">
+    <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
+    <ul id="nav-menu">
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">Saved</a></li>
+        <li class="search-bar"><input type="search" placeholder="Search.."><button class="submit-tip"><img src=>Submit a Tip</button><a class="log-in" href="log_in.html">Log In</a></li>
+    </ul>
+</nav>
+
+<div class="profile-header">
+    <img src="" alt="profile-picture">
+    <h3 id='display-name'></h3>
+</div>
+<script>
+    const username = sessionStorage.getItem("currentUser");
+    document.getElementById('display-name').textContent = username
+</script>
+</body>

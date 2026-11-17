@@ -14,9 +14,6 @@
 <body>
     <nav class="navigation-pane">
     <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
     <ul id="nav-menu">
         <li><a href="#">Explore</a></li>
         <li><a href="#">Projects</a></li>
@@ -37,43 +34,109 @@
     </ul>
     </div>
     <div class="log-in-form">
-        <button type="button" id="show-login">Log in</button>
+        <button type="button" id="show-login" class="active">Log in</button>
         <button type="button" id="show-signup">Create account</button>
         <form id="signup-form" hidden>
             <h4>Create an account</h4>
-            <h5>Display name</h5>
-            <input type="text" id="dname" name="dname" placeholder="Display Name"><br>
+            <hr>
+            <h4>Display name</h4>
+            <input type="text" id="dname" name="dname" placeholder="Display Name" required><br>
             <h4>Email</h4>
-            <input type="text" id="email" name="email" placeholder="Email"><br>
+            <input type="text" id="email" name="email" placeholder="Email" required><br>
             <h4>Password</h4>
-            <input type="password" id="password" name="password" placeholder="Password"><br>
-            <input type="checkbox" id="guidelines" name="guidelines">
-            <label for="guidelines">I Agree to the community guidelines</label>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
+            <input type="checkbox" id="guidelines" name="guidelines" required>
+            <label for="guidelines">I Agree to the community guidelines</label><br><br>
+            <button type="submit" class="continue-login">Continue -></button><br><br>
         </form>
         <form id="login-form">
+            <h4>Login</h4>
+            <hr>
             <h4>Email</h4>
-            <input type="text" id="email" name="email" placeholder="Email"><br>
+            <input type="text" id="email" name="email" placeholder="Email" required><br>
             <h4>Password</h4>
-            <input type="password" id="password" name="password" placeholder="password"><br>
+            <input type="password" id="password" name="password" placeholder="password" required><br>
             <input type="checkbox" id="retainlogin" name="retainlogin">
-            <label for="retainlogin">Keep me Logged in</label> 
+            <label for="retainlogin">Keep me Logged in</label><br><br> 
+            <button type="submit" class="continue-login">Continue -></button><br><br>
         </form>
         
     </div>
 
 </div>
+<div class="footer-area">
+    <footer>
+        <div class="footer-brand">
+            <h4>Homehub</h4>
+            <p>Home improvement ideas shared by the community</p>
+        </div>
+        <div class="footer-links">
+        <ul class="explore-footer">
+            <li><b>Explore</b></li>
+            <li><a>Projects</a></li>
+            <li><a>Categories</a></li>
+            <li><a>Q&A</a></li>
+        </ul>
+        <ul class="help-footer">
+            <li><b>Help</b></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Safety guidence</a></li>
+            <li><a>Accessibility</a></li>
+        </ul>
+        <ul class="account-footer">
+            <li><b>Account</b></li>
+            <li><a href="log_in.html">Log in</a></li>
+            <li><a>Register</a></li>
+        </ul>
+        </div>
+
+    </footer>
+</div>
     <script>
         const  loginForm = document.getElementById("login-form");
         const  signupForm = document.getElementById("signup-form");
-        document.getElementById("show-login").addEventListener("click",() =>{
+        const  loginButton = document.getElementById("show-login");
+        const  signupButton = document.getElementById("show-signup");
+        loginButton.addEventListener("click",() =>{
             loginForm.hidden = false;
             signupForm.hidden = true;
+            loginButton.classList.add("active");
+            signupButton.classList.remove("active");
         });
-            document.getElementById("show-signup").addEventListener("click",() =>{
+        signupButton.addEventListener("click",() =>{
             loginForm.hidden = true;
             signupForm.hidden = false;
+            signupButton.classList.add("active");
+            loginButton.classList.remove("active");
         });
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
 
+            const email = loginForm.querySelector('[name="email"]').value;
+            const password = loginForm.querySelector('[name="password"]').value;
+
+            if(email !== '' && password !==''){
+                sessionStorage.setItem('userEmail',email)
+                
+            }
+
+            sessionStorage.setItem('currentUser', email);
+
+            window.location.href = 'profile_page.html';
+        });
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const displayName = signupForm.querySelector('[name="dname"]').value;
+            const email = signupForm.querySelector('[name="email"]').value;
+
+            sessionStorage.setItem('displayName', displayName);
+            sessionStorage.setItem('userEmail', email);
+            sessionStorage.setItem('currentUser', displayName);
+
+            window.location.href = 'profile_page.html';
+        });
     </script>
 </body>
 </html>

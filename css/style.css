@@ -5,6 +5,9 @@
 
 body{
     font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 h1{
     font-family: 'Fraunces', serif;
@@ -33,28 +36,6 @@ h1{
     .logo img{
         height: 40px;
         width: auto;
-    }
-    .nav-toggle{
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        margin-left: auto;
-        margin-right: 16px;
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        border: none;
-        border-radius: 4px;
-        background: transparent;
-        cursor: pointer;
-    }
-    .nav-toggle span{
-        display: block;
-        height: 2px;
-        width: 100%;
-        background-color: #181F1C;
-        transition: transform 0.3s, opacity 0.3s;
     }
     li a {
         display: flex;
@@ -104,24 +85,20 @@ h1{
         border-radius: 4px;
         background-color: #F4F6F2;
         cursor:pointer;
-        /* It's a link now (it goes to another page), so make it look like the button it replaced */
         display: inline-flex;
         align-items: center;
         color: #181F1C;
         text-decoration: none;
     }
-    /* Stops Bootstrap turning the link blue and underlining it on hover */
     li .log-in:hover,
     li .log-in:focus{
         color: #181F1C;
         text-decoration: none;
     }
-    /* Same hover shadow as the question boxes and the ask/tip buttons.
-       Same font size too, as the link would otherwise be bigger than the button next to it */
     li.search-bar button,
     li .log-in{
         transition: box-shadow 0.2s ease;
-        font-size: 14px; /* px, not rem: Bootstrap 3 sets the root font size to 10px */
+        font-size: 14px;
     }
     li.search-bar button:hover,
     li.search-bar button:focus-visible,
@@ -185,7 +162,6 @@ h1{
     }
 }
 
-/* Heading on the left, "Browse all" link on the right, tiles on the row below */
 .browse_category{
     display: flex;
     flex-wrap: wrap;
@@ -205,7 +181,6 @@ h1{
     }
 }
 
-/* Medium screens: tighten the nav so everything still fits on one row */
 @media (max-width: 1100px){
     .navigation-pane{
         li a{
@@ -217,27 +192,17 @@ h1{
     }
 }
 
-/* Small screens: collapse the nav into a hamburger menu */
 @media (max-width: 900px){
     .navigation-pane{
-        .nav-toggle{
-            display: flex;
-        }
         ul{
-            display: none;
             flex: 1 1 100%;
-            flex-direction: column;
-            align-items: stretch;
-            border-top: 1px solid #181F1C;
-        }
-        &.open ul{
-            display: flex;
+            flex-wrap: wrap;
         }
         li a{
             height: 48px;
-            justify-content: flex-start;
         }
         li.search-bar{
+            flex: 1 1 100%;
             flex-wrap: wrap;
             margin-left: 0;
         }
@@ -247,16 +212,6 @@ h1{
         }
         li.search-bar button{
             flex: 1 1 0;
-        }
-        /* Animate the hamburger into an X when open */
-        &.open .nav-toggle span:nth-child(1){
-            transform: translateY(7px) rotate(45deg);
-        }
-        &.open .nav-toggle span:nth-child(2){
-            opacity: 0;
-        }
-        &.open .nav-toggle span:nth-child(3){
-            transform: translateY(-7px) rotate(-45deg);
         }
     }
 }
@@ -296,7 +251,6 @@ h1{
 }
 
 .featured-cards{
-    /* No top padding: .browse_category's bottom padding already separates the two sections */
     padding: 0 6% 6%;
 
     .section-header {
@@ -323,7 +277,7 @@ h1{
     border-radius: 8px;
     text-decoration: none;
     color: inherit;
-    overflow: hidden; /* clips the image to the card's rounded corners */
+    overflow: hidden;
     transition: box-shadow 0.2s ease;
 }
     .tile:hover,
@@ -336,7 +290,6 @@ h1{
         gap: 1rem;
 }
 
-    /* Image spans the full card width, cancelling the tile's padding */
     .tile-row img{
         width: calc(100% + 2rem);
         margin: -1.5rem -1rem 0;
@@ -344,7 +297,6 @@ h1{
         object-fit: cover;
         display: block;
     }
-    /* Text scales with the viewport: clamp(min, preferred, max) */
     .tile p{
         margin: 0;
         font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1rem);
@@ -360,7 +312,7 @@ h1{
         margin:0;
         padding:0;
         display: flex;
-        flex-wrap: wrap; /* items drop to a new line on narrow cards */
+        flex-wrap: wrap;
         align-items: center;
         gap: clamp(0.5rem, 0.3rem + 1vw, 1rem);
     }
@@ -374,31 +326,27 @@ h1{
     }
 }
 .info-area{
-    /* No top padding: .featured-cards' bottom padding already separates the two sections */
-    padding: 0 6% 4rem; /* bottom matches .help-list's top margin */
+    padding:6%;
     .help-list{
         list-style-type: none;
-        /* Same space above as .info-area has below, so the list sits vertically centred
-           between the heading and the divider line */
+
         margin: 4rem 0 0;
         padding:0;
         color:#181F1C;
-        /* Equal-width columns; they stack into fewer columns on narrow screens */
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: clamp(1rem, 0.5rem + 2vw, 2.5rem);
-        counter-reset: step; /* start numbering at 1 for this list */
+        counter-reset: step; 
     }
-    /* Description text wraps within its column */
+
     .help-list li{
-        min-width: 0; /* lets long text shrink and wrap inside its column */
+        min-width: 0; 
         overflow-wrap: break-word;
-        text-wrap: pretty; /* avoids a single word left alone on the last line */
+        text-wrap: pretty; 
         counter-increment: step;
         position: relative;
-        padding-left: 3rem; /* room for the number circle */
+        padding-left: 3rem; 
     }
-    /* Numbered circle beside each step (1, 2, 3...) */
     .help-list li::before{
         content: counter(step);
         position: absolute;
@@ -419,15 +367,13 @@ h1{
         margin: 0 0 0.5rem;
     }
 }
-/* Wraps the FAQ list and the "Stuck on a Job?" card so they sit side by side */
 .questions-area{
     display: flex;
     align-items: flex-start;
     gap: 3rem;
-    /* Margin (not padding) on the sides so the divider line lines up with the page content */
     margin: 0 6%;
     padding: 4rem 0 3rem;
-    border-top: 1px solid rgba(24, 31, 28, 0.2); /* divider between "How Homehub Works" and the questions */
+    border-top: 1px solid rgba(24, 31, 28, 0.2); 
 }
 .frequent-questions{
     flex: 2;
@@ -437,13 +383,12 @@ h1{
     ul{
         margin: 0;
         padding: 0;
-        max-width: 600px; /* stops the question boxes stretching across the whole column */
+        max-width: 600px; 
         list-style:none;
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
-    /* The link fills the whole box, so anywhere inside it is clickable */
     a{
           display: block;
           border: 1px solid #181F1C;
@@ -464,9 +409,8 @@ h1{
     background-color:#558564;
     border-radius: 10px;
     padding: 2rem;
-    /* Soft drop shadow so the card lifts off the white page */
     box-shadow: 0 10px 30px rgba(24, 31, 28, 0.2);
-    margin-top: 3.5rem; /* lines the card up with the first question rather than the heading */
+    margin-top: 3.5rem; 
 
     h4{
         margin: 0 0 0.75rem;
@@ -482,7 +426,7 @@ h1{
         flex-wrap: wrap;
         gap: 0.75rem;
     }
-    /* Same hover shadow as the question boxes */
+
     .ask-buttons button{
         transition: box-shadow 0.2s ease;
     }
@@ -510,7 +454,7 @@ h1{
         color:#181F1C;
     }
 }
-/* Stack the FAQ list and the ask card on smaller screens */
+
 @media (max-width: 768px){
     .questions-area{
         flex-direction: column;
@@ -524,22 +468,23 @@ h1{
 }
 
 .footer-area{
+    margin-top: auto;
     background-color:#DCe0d9;
     padding:3% 6%;
-    /* The flex layout goes on <footer>, because that's the element holding the brand and the lists */
+
     footer{
         display:flex;
         align-items:flex-start;
-        gap:6rem; /* space between the brand and the lists */
+        gap:6rem;
     }
-    /* Capped width so the tagline wraps instead of pushing the lists onto a new line */
+
     .footer-brand{
         flex: 0 1 320px;
         h4{
             margin-top: 0;
         }
     }
-    /* The three lists side by side as columns */
+
     .footer-links{
         display:flex;
         gap:4rem;
@@ -559,7 +504,6 @@ h1{
         cursor:pointer
     }
 }
-/* Small screens: brand on top, then the link columns, which wrap if needed */
 @media (max-width: 768px){
     .footer-area footer{
         flex-direction: column;
@@ -567,5 +511,100 @@ h1{
     .footer-area .footer-links{
         flex-wrap: wrap;
         gap: 2rem;
+    }
+}
+
+.login-area{
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 6%;
+    .login-header{
+        flex: 1 1 40%;
+    }
+    .log-in-form{
+        border-radius: 10px;
+        border: none;
+        background-color: #DCe0d9;
+        width:40%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    @media (max-width: 768px){
+        flex-direction: column;
+        .log-in-form{
+            width: 100%;
+        }
+    }
+    hr{
+        border:none;
+        height:1px;
+        background-color: #181F1C;
+        width:70%;
+    }
+    #show-login,
+    #show-signup{
+        flex: 1 1 50%;
+        border-left: none;
+        border-right: none;
+        border-top:none;
+        border-bottom: solid 1px black;
+        border-radius: 0;
+        height:36px;
+    }
+    #show-login{
+        border-top-left-radius: 9px;
+    }
+    #show-signup{
+        border-top-right-radius: 9px;
+    }
+    #show-login.active,
+    #show-signup.active{
+        background-color: white;
+        color: #181F1C;
+    }
+    .log-in-form form{
+        flex: 1 1 100%;
+    }
+    #email{
+        border-radius: 5px;
+        border:none;
+        padding:5px;
+        transition: box-shadow 0.2s ease;
+    }
+    #email:hover{
+            box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    #password{
+        border-radius:5px;
+        border:none;
+        padding:5px;
+        transition: box-shadow 0.2s ease;
+    }
+    
+    #dname{
+        border-radius:5px;
+        border:none;
+        padding:5px;
+        transition: box-shadow 0.2s ease;
+    }
+
+    input[type=text]:focus{
+        outline:none;
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    input[type=password]:focus{
+        outline:none;
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    .continue-login{
+        border:none;
+        border-radius: 5px;
+        padding: 10px;
+        background-color:#558564;
+        color:#fff;
+
     }
 }

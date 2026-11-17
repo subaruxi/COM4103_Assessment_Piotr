@@ -14,9 +14,6 @@
 <body>
 <nav class="navigation-pane">
     <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-    </button>
     <ul id="nav-menu">
         <li><a href="#">Explore</a></li>
         <li><a href="#">Projects</a></li>
@@ -178,21 +175,12 @@
         <ul class="account-footer">
             <li><b>Account</b></li>
             <li><a href="log_in.html">Log in</a></li>
-            <li><a>Register</a></li>
+            <li><a href="log_in.html">Register</a></li>
         </ul>
         </div>
 
     </footer>
 </div>
-
-<script>
-    // Toggle the mobile navigation menu
-    document.querySelector('.nav-toggle').addEventListener('click', function () {
-        var nav = document.querySelector('.navigation-pane');
-        var isOpen = nav.classList.toggle('open');
-        this.setAttribute('aria-expanded', isOpen);
-    });
-</script>
 
 </body>
 </html>

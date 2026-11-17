@@ -264,7 +264,8 @@ TODO: what changed from your original timeline, what challenges you faced and ho
 I used generative AI (Claude, Anthropic) to:
 - suggest a task breakdown and Gantt chart structure for the project plan, which I reviewed and adjusted;
 - summarise the assessment brief and list the PRD feature catalogue, to aid my understanding;
-- generate wireframes for the website in figma. The designs are not final and will be changed in the final product as they will be created by me
+- generate wireframes for the website in figma.
+- assist with the alignment of elements in the website inside of the code, teaching me how to align items in the code
 - draft the structure of this README. The content, justifications and reflections are my own.
 
 TODO: add any other use (for example help debugging code or understanding a concept) and confirm the statement for the work you actually submit.
