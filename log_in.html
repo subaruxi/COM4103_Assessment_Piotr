@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homehub Log in</title>
+</head>
+<body>
+    <nav class="navigation-pane">
+    <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu">
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">Saved</a></li>
+        <li class="search-bar"><input type="search" placeholder="Search.."><button class="submit-tip"><img src=>Submit a Tip</button><a class="log-in" href="log_in.html">Log In</a></li>
+    </ul>
+</nav>
+<div class="login-area">
+    <div class="login-header">
+    <h2>Join Homehub</h2>
+    <h3>Browsing in free and open, an account lets you:</h3>
+    <ul>
+        <li>Save projects to try later</li>
+        <li>Ask and answer questions later</li>
+        <li>Share your own tips with photos</li>
+        <li>Vote for the most helpful guides</li>
+    </ul>
+    </div>
+    <div class="log-in-form">
+        <button type="button" id="show-login">Log in</button>
+        <button type="button" id="show-signup">Create account</button>
+        <form id="signup-form" hidden>
+            <h4>Create an account</h4>
+            <h5>Display name</h5>
+            <input type="text" id="dname" name="dname" placeholder="Display Name"><br>
+            <h4>Email</h4>
+            <input type="text" id="email" name="email" placeholder="Email"><br>
+            <h4>Password</h4>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <input type="checkbox" id="guidelines" name="guidelines">
+            <label for="guidelines">I Agree to the community guidelines</label>
+        </form>
+        <form id="login-form">
+            <h4>Email</h4>
+            <input type="text" id="email" name="email" placeholder="Email"><br>
+            <h4>Password</h4>
+            <input type="password" id="password" name="password" placeholder="password"><br>
+            <input type="checkbox" id="retainlogin" name="retainlogin">
+            <label for="retainlogin">Keep me Logged in</label> 
+        </form>
+        
+    </div>
+
+</div>
+    <script>
+        const  loginForm = document.getElementById("login-form");
+        const  signupForm = document.getElementById("signup-form");
+        document.getElementById("show-login").addEventListener("click",() =>{
+            loginForm.hidden = false;
+            signupForm.hidden = true;
+        });
+            document.getElementById("show-signup").addEventListener("click",() =>{
+            loginForm.hidden = true;
+            signupForm.hidden = false;
+        });
+
+    </script>
+</body>
+</html>

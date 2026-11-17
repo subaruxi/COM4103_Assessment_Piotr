@@ -1,3 +1,4 @@
+[hidden] { display: none !important; }
 *{
     box-sizing: border-box;
 }
@@ -103,14 +104,29 @@ h1{
         border-radius: 4px;
         background-color: #F4F6F2;
         cursor:pointer;
-
+        /* It's a link now (it goes to another page), so make it look like the button it replaced */
+        display: inline-flex;
+        align-items: center;
+        color: #181F1C;
+        text-decoration: none;
     }
-    /* Same hover shadow as the question boxes and the ask/tip buttons */
-    li.search-bar button{
+    /* Stops Bootstrap turning the link blue and underlining it on hover */
+    li .log-in:hover,
+    li .log-in:focus{
+        color: #181F1C;
+        text-decoration: none;
+    }
+    /* Same hover shadow as the question boxes and the ask/tip buttons.
+       Same font size too, as the link would otherwise be bigger than the button next to it */
+    li.search-bar button,
+    li .log-in{
         transition: box-shadow 0.2s ease;
+        font-size: 14px; /* px, not rem: Bootstrap 3 sets the root font size to 10px */
     }
     li.search-bar button:hover,
-    li.search-bar button:focus-visible{
+    li.search-bar button:focus-visible,
+    li .log-in:hover,
+    li .log-in:focus-visible{
         box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
     }
 }
