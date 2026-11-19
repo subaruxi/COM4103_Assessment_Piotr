@@ -24,11 +24,314 @@
 </nav>
 
 <div class="profile-header">
-    <img src="" alt="profile-picture">
-    <h3 id='display-name'></h3>
+    <img src="img/user_profile_picture.png" alt="profile-picture">
+    <div class="profile-info">
+        <h3 id='display-name'></h3>
+        <p>Add a Bio</p>
+        <ul>
+            <li>5 Tips Shared</li>
+            <li>32 helpful votes recieved</li>
+            <li>8 Saved</li>
+        </ul>
+        <button class="edit-profile" id="edit-profile-button">Edit Profile</button>
+    </div>
+
 </div>
+<div class="section-select">
+    <button id="saved" class="active">Saved</button>
+    <button id="my-tips">My Tips</button>
+    <button id="my-questions">My Questions</button>
+    <button id="settings">Settings</button>
+</div>
+<div class="saved-projects" id="saved-projects">
+    <h3>Saved Projects</h3>
+    <div class="tile-row">
+        <a class="tile" href="">
+            <img src="img/shower-regrout.jpg" alt="Re-grouted shower">
+            <p>Bathroom</p>
+            <h4>Re-grout a shower in an afternoon</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>2 Hours</li>
+                <li>£90</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/raised-bed.jpeg" alt="Raised vegetable bed">
+            <p>Garden</p>
+            <h4>Grow your own veg in a raised planter</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>4 Hours</li>
+                <li>£60</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/feature-wall.jpg" alt="Painted feature wall">
+            <p>Decorating</p>
+            <h4>Choose and paint a bold accent colour</h4>
+            <ul>
+                <li>Intermediate</li>
+                <li>1 Day</li>
+                <li>£45</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/alcove-shelving.jpg" alt="Shelving fitted in an alcove">
+            <p>Storage</p>
+            <h4>Fit floating shelves beside a chimney</h4>
+            <ul>
+                <li>Advanced</li>
+                <li>2 Days</li>
+                <li>£120</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/hero-finished-project.jpg" alt="Finished home improvement project">
+            <p>Flooring</p>
+            <h4>Lay click-fit laminate in a bedroom</h4>
+            <ul>
+                <li>Intermediate</li>
+                <li>1 Day</li>
+                <li>£250</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/shower-regrout.jpg" alt="Bathroom with sealed bath edge">
+            <p>Bathroom</p>
+            <h4>Reseal a bath with fresh silicone</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>1 Hour</li>
+                <li>£15</li>
+            </ul>
+        </a>
+
+    </div>
+</div>
+<div class="recommended-projects" id="recommended-projects">
+    <h3>Recommended Projects</h3>
+        <div class="tile-row">
+        <a class="tile" href="">
+            <img src="img/shower-regrout.jpg" alt="Re-grouted shower">
+            <p>Bathroom</p>
+            <h4>Re-grout a shower in an afternoon</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>2 Hours</li>
+                <li>£90</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/raised-bed.jpeg" alt="Raised vegetable bed">
+            <p>Garden</p>
+            <h4>Grow your own veg in a raised planter</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>4 Hours</li>
+                <li>£60</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/feature-wall.jpg" alt="Painted feature wall">
+            <p>Decorating</p>
+            <h4>Choose and paint a bold accent colour</h4>
+            <ul>
+                <li>Intermediate</li>
+                <li>1 Day</li>
+                <li>£45</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/alcove-shelving.jpg" alt="Shelving fitted in an alcove">
+            <p>Storage</p>
+            <h4>Fit floating shelves beside a chimney</h4>
+            <ul>
+                <li>Advanced</li>
+                <li>2 Days</li>
+                <li>£120</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/hero-finished-project.jpg" alt="Finished home improvement project">
+            <p>Flooring</p>
+            <h4>Lay click-fit laminate in a bedroom</h4>
+            <ul>
+                <li>Intermediate</li>
+                <li>1 Day</li>
+                <li>£250</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/shower-regrout.jpg" alt="Bathroom with sealed bath edge">
+            <p>Bathroom</p>
+            <h4>Reseal a bath with fresh silicone</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>1 Hour</li>
+                <li>£15</li>
+            </ul>
+        </a>
+
+    </div>
+</div>
+<div class="my-tips" id="my-tips-section" hidden>
+    <h3>My Tips</h3>
+    <div class="tile-row">
+        <a class="tile" href="">
+            <img src="img/shower-regrout.jpg" alt="Cleaned shower grout">
+            <p>Bathroom</p>
+            <h4>Lift mould from grout with a baking soda paste</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>30 Mins</li>
+                <li>£5</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/raised-bed.jpeg" alt="Raised vegetable bed">
+            <p>Garden</p>
+            <h4>Line a raised bed to stop timber rotting</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>1 Hour</li>
+                <li>£20</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/feature-wall.jpg" alt="Painted feature wall">
+            <p>Decorating</p>
+            <h4>Get crisp paint lines with decorator's caulk</h4>
+            <ul>
+                <li>Intermediate</li>
+                <li>2 Hours</li>
+                <li>£10</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/alcove-shelving.jpg" alt="Shelving fitted in an alcove">
+            <p>Storage</p>
+            <h4>Find studs and cables before drilling a wall</h4>
+            <ul>
+                <li>Beginner</li>
+                <li>15 Mins</li>
+                <li>£0</li>
+            </ul>
+        </a>
+        <a class="tile" href="">
+            <img src="img/hero-finished-project.jpg" alt="Finished laminate floor">
+            <p>Flooring</p>
+            <h4>Leave an expansion gap when laying laminate</h4>
+            <ul>
+                <li>Intermediate</li>
+                <li>10 Mins</li>
+                <li>£0</li>
+            </ul>
+        </a>
+    </div>
+</div>
+<div class="my-questions" id="my-questions-section" hidden>
+    <h4>My Questions</h4>
+    <div class="question-list">
+        <ul>
+            <li><a href="">What's the best way to fix a squeaky floorboard under carpet?</a></li>
+            <li><a href="">Can I paint over gloss without sanding it first?</a></li>
+            <li><a href="">Why does my bathroom extractor fan leave condensation on the ceiling?</a></li>
+            <li><a href="">How do I stop a radiator from being cold at the top?</a></li>
+            <li><a href="">Which wall plugs should I use for shelves on a plasterboard wall?</a></li>
+            <li><a href="">Is it worth sealing a new patio, and what sealer would you use?</a></li>
+        </ul>
+    </div>
+</div>
+<div class="edit-profile-section" id="change-profile">
+    <dialog id="profile-area">
+        <form method="dialog">
+
+        </form>
+    </dialog>
+</div>
+<div class="footer-area">
+    <footer>
+        <div class="footer-brand">
+            <h4>Homehub</h4>
+            <p>Home improvement ideas shared by the community</p>
+        </div>
+        <div class="footer-links">
+        <ul class="explore-footer">
+            <li><b>Explore</b></li>
+            <li><a>Projects</a></li>
+            <li><a>Categories</a></li>
+            <li><a>Q&A</a></li>
+        </ul>
+        <ul class="help-footer">
+            <li><b>Help</b></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Safety guidence</a></li>
+            <li><a>Accessibility</a></li>
+        </ul>
+        <ul class="account-footer">
+            <li><b>Account</b></li>
+            <li><a href="log_in.html">Log in</a></li>
+            <li><a>Register</a></li>
+        </ul>
+        </div>
+
+    </footer>
+</div>
+
 <script>
     const username = sessionStorage.getItem("currentUser");
     document.getElementById('display-name').textContent = username
+
+    const sectionButtons = document.querySelectorAll('.section-select button');
+    sectionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        sectionButtons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+    });
+});
+    const savedButton =document.getElementById("saved");
+    const tipsButton = document.getElementById("my-tips");
+    const questionsButton = document.getElementById("my-questions");
+    const settingsButton = document.getElementById("settings");
+    const savedProjects = document.getElementById("saved-projects");
+    const recommendProjects = document.getElementById("recommended-projects")
+    const myTips = document.getElementById("my-tips-section");
+    const myQuestions = document.getElementById("my-questions-section")
+    const editProfile = document.getElementById("edit-profile-button")
+    const editProfileSection = document.getElementById("change-profile")
+
+            savedButton.addEventListener("click",() =>{
+                savedProjects.hidden = false;
+                recommendProjects.hidden = false;
+                myTips.hidden = true;
+                myQuestions.hidden = true;
+        });
+
+            tipsButton.addEventListener("click",() =>{
+                savedProjects.hidden = true;
+                recommendProjects.hidden = true;
+                myTips.hidden = false;
+                myQuestions.hidden = true;
+        });
+
+            questionsButton.addEventListener("click",() =>{
+                savedProjects.hidden = true;
+                recommendProjects.hidden = true;
+                myTips.hidden = true;
+                myQuestions.hidden = false;
+            });
+
+            settingsButton.addEventListener("click",() =>{
+                savedProjects.hidden = true;
+                recommendProjects.hidden = true;
+                myTips.hidden = true;
+                myQuestions.hidden = true;
+            });
+            editProfile.addEventListener("click",() =>{
+                editProfileSection.hidden = false;
+            })
+
 </script>
 </body>
