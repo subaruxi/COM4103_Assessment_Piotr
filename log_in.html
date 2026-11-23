@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/nav.js" defer></script>
     <title>Homehub Log in</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
     <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
     <ul id="nav-menu">
         <li><a href="#">Explore</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="#">Q&A</a></li>
         <li><a href="#">Saved</a></li>
         <li class="search-bar"><input type="search" placeholder="Search.."><button class="submit-tip"><img src=>Submit a Tip</button><a class="log-in" href="log_in.html">Log In</a></li>
@@ -117,11 +118,11 @@
             const password = loginForm.querySelector('[name="password"]').value;
 
             if(email !== '' && password !==''){
-                sessionStorage.setItem('userEmail',email)
+                localStorage.setItem('userEmail',email)
                 
             }
 
-            sessionStorage.setItem('currentUser', email);
+            localStorage.setItem('currentUser', email);
 
             window.location.href = 'profile_page.html';
         });
@@ -131,9 +132,9 @@
             const displayName = signupForm.querySelector('[name="dname"]').value;
             const email = signupForm.querySelector('[name="email"]').value;
 
-            sessionStorage.setItem('displayName', displayName);
-            sessionStorage.setItem('userEmail', email);
-            sessionStorage.setItem('currentUser', displayName);
+            localStorage.setItem('displayName', displayName);
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('currentUser', displayName);
 
             window.location.href = 'profile_page.html';
         });

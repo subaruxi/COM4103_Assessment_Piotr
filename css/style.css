@@ -46,13 +46,21 @@ h1{
         padding:16px;
         text-decoration: none;
         font-size: 16px;
+        white-space: nowrap;
         transition: transform 0.2s ease;
     }
     li a:hover{
         transform: translateY(-4px);
         transition: 0.3s;
-        
-        
+
+
+    }
+    /* Underline the link for the page that is currently open */
+    li a[aria-current="page"]{
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+        font-weight: 600;
     }
     li.search-bar{
         display:flex;
@@ -99,6 +107,9 @@ h1{
     li .log-in{
         transition: box-shadow 0.2s ease;
         font-size: 14px;
+        /* Keep button text on one line and stop flexbox squashing the button */
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     li.search-bar button:hover,
     li.search-bar button:focus-visible,
@@ -704,6 +715,32 @@ h1{
         font-size: 16px;
     }
 }
+/* Saved projects added from the projects page, each with a Remove button */
+.saved-tile{
+    position: relative;
+
+    .tile{
+        height: 100%;
+    }
+}
+.remove-button{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 28px;
+    padding: 0 12px;
+    border: 1px solid #181f1c;
+    border-radius: 4px;
+    background-color: #F4F6F2;
+    color: #181f1c;
+    font-size: 13px;
+    cursor: pointer;
+}
+.remove-button:hover,
+.remove-button:focus-visible{
+    background-color: #181f1c;
+    color: #F4F6F2;
+}
 .recommended-projects{
         padding: 2% 6% 6%;
 
@@ -760,18 +797,352 @@ h1{
         gap: 1rem;
     }
     a{
-          display: block;
-          border: 1px solid #181F1C;
-          border-radius: 5px;
-          padding:1rem;
-          color: #181F1C;
-          text-decoration: none;
-          transition: box-shadow 0.2s ease;
+        display: block;
+        border: 1px solid #181F1C;
+        border-radius: 5px;
+        padding:1rem;
+        color: #181F1C;
+        text-decoration: none;
+        transition: box-shadow 0.2s ease;
     }
     a:hover,
     a:focus-visible{
         cursor:pointer;
         box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
     }
+    }
+}
+.explore-header{
+    padding: 2% 6% 6%;
+
+    #search-bar-projects{
+        height: 36px;
+        padding: 0 12px;
+        border: 1px solid;
+        border-radius: 5px;
+        width:70%;
+    }
+    .search-area{
+        margin-top: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+    .search-area button{
+        height:36px;
+        padding: 0 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #181f1c;
+        cursor:pointer;
+        color:#F4F6F2;
+    }
+}
+.project-area{
+    padding: 24px 0;
+    height:auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap:16px;
+    .filter-section{
+        padding: 0 16px;
+        width:25%;
+        /* Never shrink narrower than the header + button, so nothing spills past the border */
+        min-width: max-content;
+        height:auto;
+        border-right: solid 1px;
+        border-left: solid 1px;
+
+        .filter-header{
+            display: flex;
+            flex-direction: row;
+            /* "Filter" stays against the left padding, button on the right */
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 28px;
+        }
+        .filter-header h5{
+            margin: 0;
+        }
+        .filter-header button{
+            height: 32px;
+            padding: 0 12px;
+            border: 1px solid #181f1c;
+            border-radius: 4px;
+            background-color: transparent;
+            cursor: pointer;
+            /* Keep "Clear All" on one line and stop flexbox squashing it */
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+    }
+    .difficulty-section{
+        padding:5% 0 0;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap:nowrap;
+        gap:16px;
+    }
+    /* Checkbox sits to the left of its label text */
+    .filter-option{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        font-weight: normal;
+        cursor: pointer;
+    }
+    .filter-option input[type="checkbox"]{
+        margin: 0;
+    }
+    .time-section{
+        padding:5% 0 0;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap:nowrap;
+        gap:16px;
+    }
+    /* Project tiles - same look as the tiles on the profile page */
+    /* Holds the grid with the Load More button underneath it */
+    .project-results{
+        /* Take up all the space to the right of the filters */
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    /* Category tabs on the left, "Sort by" on the right */
+    .project-toolbar{
+        width: 100%;
+        display: flex;
+        /* Keep "Sort by" on the same line as the tabs, pinned to the right */
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .category-tabs{
+        /* Tabs take the leftover space and wrap within it if they run out of room */
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .category-tab{
+        height: 32px;
+        padding: 0 10px;
+        border: 1px solid #181f1c;
+        border-radius: 16px;
+        background-color: transparent;
+        color: #181f1c;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .category-tab:hover,
+    .category-tab:focus-visible{
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    .category-tab.active{
+        background-color: #181f1c;
+        color: #F4F6F2;
+    }
+    .sort-control{
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+    .sort-control select{
+        height: 32px;
+        padding: 0 8px;
+        border: 1px solid #181f1c;
+        border-radius: 4px;
+        background-color: #F4F6F2;
+        cursor: pointer;
+    }
+    .project-grid{
+        width: 100%;
+        display: grid;
+        /* 3 per row, so each "page" of 6 tiles fills exactly 2 rows */
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+    .load-more{
+        height: 40px;
+        padding: 0 24px;
+        border: none;
+        border-radius: 4px;
+        background-color: #181f1c;
+        color: #F4F6F2;
+        cursor: pointer;
+    }
+    /* Message stretches across every column of the grid */
+    .no-results{
+        grid-column: 1 / -1;
+        margin: 0;
+    }
+    /* Lets the Save button sit on top of the tile's image */
+    .project-tile{
+        position: relative;
+    }
+    .save-button{
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #181f1c;
+        border-radius: 4px;
+        background-color: #F4F6F2;
+        cursor: pointer;
+    }
+    .save-button:hover,
+    .save-button:focus-visible{
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    .save-button img{
+        width: 16px;
+        height: 16px;
+    }
+    .tile{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 100%;
+        padding-bottom: 1rem;
+        border: 1px solid #bdbdbd;
+        border-radius: 8px;
+        overflow: hidden;
+        color: #181F1C;
+        text-decoration: none;
+    }
+    .tile:hover,
+    .tile:focus-visible{
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    .tile img{
+        width: 100%;
+        /* Slightly wider than 4:3 so 3-across tiles don't get too tall */
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+    .tile p, .tile h4, .tile ul{
+        margin: 0 0.75rem;
+    }
+    .tile p{
+        font-size: 14px;
+    }
+    .tile h4{
+        font-size: 16px;
+    }
+    .tile ul{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-size: 14px;
+    }
+}
+
+/* Keep "Budget: £700" on one line */
+.project-area label[for="budget"]{
+    white-space: nowrap;
+}
+/* Budget slider in the site's colours.
+   --fill is set by filters.js to how far along the slider is, e.g. 60%,
+   so the track is dark up to the handle and light after it. */
+#budget{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    margin: 12px 0 4px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #181F1C var(--fill, 100%), #DCE0D9 var(--fill, 100%));
+    cursor: pointer;
+}
+/* The round handle - Chrome, Edge and Safari */
+#budget::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 3px solid #F4F6F2;
+    border-radius: 50%;
+    background-color: #181F1C;
+    box-shadow: 0 0 0 1px #181F1C;
+    transition: box-shadow 0.2s ease;
+}
+/* The round handle - Firefox */
+#budget::-moz-range-thumb{
+    width: 12px;
+    height: 12px;
+    border: 3px solid #F4F6F2;
+    border-radius: 50%;
+    background-color: #181F1C;
+    box-shadow: 0 0 0 1px #181F1C;
+    transition: box-shadow 0.2s ease;
+}
+#budget::-moz-range-track{
+    background: transparent;
+}
+/* Same soft shadow as the site's buttons on hover / keyboard focus */
+#budget:hover::-webkit-slider-thumb,
+#budget:focus-visible::-webkit-slider-thumb{
+    box-shadow: 0 0 0 1px #181F1C, 0 4px 10px rgba(24, 31, 28, 0.3);
+}
+#budget:hover::-moz-range-thumb,
+#budget:focus-visible::-moz-range-thumb{
+    box-shadow: 0 0 0 1px #181F1C, 0 4px 10px rgba(24, 31, 28, 0.3);
+}
+#budget:focus{
+    outline: none;
+}
+
+/* Bootstrap 3 makes <output> a block on its own line - put it back inline */
+#priceOutput{
+    display: inline;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Projects page on smaller screens */
+@media (max-width: 1000px){
+    .project-area .project-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 700px){
+    .project-area{
+        flex-wrap: wrap;
+
+        .project-toolbar{
+            flex-wrap: wrap;
+        }
+        .project-grid{
+            grid-template-columns: minmax(0, 1fr);
+        }
     }
 }

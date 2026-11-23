@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/nav.js" defer></script>
+    <script src="js/filters.js"></script>
+    <script src="js/saved.js" defer></script>
+    <title>HomeHub</title>
+</head>
+<body>
+    <nav class="navigation-pane">
+        <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
+        <ul id="nav-menu">
+            <li><u><a href="projects.html">Projects</a></u></li>
+            <li><a href="#">Q&A</a></li>
+            <li><a href="#">Saved</a></li>
+            <li class="search-bar">
+                <input type="search" placeholder="Search..">
+                <button class="submit-tip"><img src=>Submit a Tip</button>
+                <a class="log-in" href="log_in.html">Log In</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="explore-header">
+        <p>Home > Projects ></p>
+        <h2>All Projects</h2>
+        <div class="search-area">
+            <input type="search" placeholder="Try Search... Raised Bed" id="search-bar-projects">
+            <button class="search-button">Search</button>
+        </div>
+        <hr>
+        <div class="project-area">
+            <form id="filter-table">
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h5><b>Filter</b></h5>
+                        <button type="reset">Clear All</button>
+                    </div>
+                    <section class="difficulty-section">
+                        <label>Difficulty</label>
+                        <label class="filter-option" for="Beginner"><input type="checkbox" id="Beginner"> Beginner</label>
+                        <label class="filter-option" for="Intermediate"><input type="checkbox" id="Intermediate"> Intermediate</label>
+                        <label class="filter-option" for="Advanced"><input type="checkbox" id="Advanced"> Advanced</label>
+                    </section>
+                    <hr>
+                    <section class="time-section">
+                        <label>Time</label>
+                        <label class="filter-option" for="Under2"><input type="checkbox" id="Under2">Under 2 Hours</label>
+                        <label class="filter-option" for="HalfDay"><input type="checkbox" id="HalfDay">Half a Day</label>
+                        <label class="filter-option" for="Weekend"><input type="checkbox" id="Weekend">Weekend</label>
+                    </section>
+                    <hr>
+                    <section>
+                        <label for="budget">Budget: £<output id="priceOutput" name="priceOutput" for="budget">700</output></label>
+                        <input type="range" id="budget" min="0" max="700" step="10" value="700">
+                    </section>
+                </div>
+            </form>
+            <div class="project-results">
+                <div class="project-toolbar">
+                    <div class="category-tabs" role="group" aria-label="Category">
+                        <button type="button" class="category-tab active" data-category="All" aria-pressed="true">All</button>
+                        <button type="button" class="category-tab" data-category="Bathroom" aria-pressed="false">Bathroom</button>
+                        <button type="button" class="category-tab" data-category="Garden" aria-pressed="false">Garden</button>
+                        <button type="button" class="category-tab" data-category="Decorating" aria-pressed="false">Decorating</button>
+                        <button type="button" class="category-tab" data-category="Storage" aria-pressed="false">Storage</button>
+                        <button type="button" class="category-tab" data-category="Flooring" aria-pressed="false">Flooring</button>
+                        <button type="button" class="category-tab" data-category="Kitchen" aria-pressed="false">Kitchen</button>
+                        <button type="button" class="category-tab" data-category="Electrics" aria-pressed="false">Electrics</button>
+                    </div>
+                    <label class="sort-control" for="sort-order">Sort by
+                        <select id="sort-order">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="time-short">Time: Shortest First</option>
+                            <option value="difficulty">Difficulty: Easiest First</option>
+                        </select>
+                    </label>
+                </div>
+                <section class="project-grid">
+                    <p id="no-results" class="no-results" hidden>No projects match these filters. Try ticking fewer boxes or raising your budget.</p>
+                    <article class="project-tile" data-difficulty="Beginner" data-time="Under2" data-price="90">
+                        <a class="tile" href="">
+                            <img src="img/shower-regrout.jpg" alt="Re-grouted shower">
+                            <p>Bathroom</p>
+                            <h4>Re-grout a shower in an afternoon</h4>
+                            <ul>
+                                <li>Beginner</li>
+                                <li>2 Hours</li>
+                                <li>£90</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Beginner" data-time="HalfDay" data-price="60">
+                        <a class="tile" href="">
+                            <img src="img/raised-bed.jpeg" alt="Raised vegetable bed">
+                            <p>Garden</p>
+                            <h4>Grow your own veg in a raised planter</h4>
+                            <ul>
+                                <li>Beginner</li>
+                                <li>4 Hours</li>
+                                <li>£60</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Intermediate" data-time="Weekend" data-price="45">
+                        <a class="tile" href="">
+                            <img src="img/feature-wall.jpg" alt="Painted feature wall">
+                            <p>Decorating</p>
+                            <h4>Choose and paint a bold accent colour</h4>
+                            <ul>
+                                <li>Intermediate</li>
+                                <li>1 Day</li>
+                                <li>£45</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Advanced" data-time="Weekend" data-price="120">
+                        <a class="tile" href="">
+                            <img src="img/alcove-shelving.jpg" alt="Shelving fitted in an alcove">
+                            <p>Storage</p>
+                            <h4>Fit floating shelves beside a chimney</h4>
+                            <ul>
+                                <li>Advanced</li>
+                                <li>2 Days</li>
+                                <li>£120</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Intermediate" data-time="Weekend" data-price="250">
+                        <a class="tile" href="">
+                            <img src="img/hero-finished-project.jpg" alt="Finished laminate floor">
+                            <p>Flooring</p>
+                            <h4>Lay click-fit laminate in a bedroom</h4>
+                            <ul>
+                                <li>Intermediate</li>
+                                <li>1 Day</li>
+                                <li>£250</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Beginner" data-time="Under2" data-price="15">
+                        <a class="tile" href="">
+                            <img src="img/shower-regrout.jpg" alt="Bathroom with sealed bath edge">
+                            <p>Bathroom</p>
+                            <h4>Reseal a bath with fresh silicone</h4>
+                            <ul>
+                                <li>Beginner</li>
+                                <li>1 Hour</li>
+                                <li>£15</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Beginner" data-time="Weekend" data-price="90">
+                        <a class="tile" href="">
+                            <img src="img/raised-bed.jpeg" alt="Wooden raised garden bed">
+                            <p>Garden</p>
+                            <h4>Build a raised bed in a weekend</h4>
+                            <ul>
+                                <li>Beginner</li>
+                                <li>2 Days</li>
+                                <li>£90</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Intermediate" data-time="Under2" data-price="70">
+                        <a class="tile" href="">
+                            <img src="img/hero-finished-project.jpg" alt="New kitchen mixer tap">
+                            <p>Kitchen</p>
+                            <h4>Replace a leaky kitchen tap</h4>
+                            <ul>
+                                <li>Intermediate</li>
+                                <li>90 Mins</li>
+                                <li>£70</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Intermediate" data-time="Under2" data-price="25">
+                        <a class="tile" href="">
+                            <img src="img/alcove-shelving.jpg" alt="Single floating shelf on a wall">
+                            <p>Storage</p>
+                            <h4>Put up a single floating shelf</h4>
+                            <ul>
+                                <li>Intermediate</li>
+                                <li>1 Hour</li>
+                                <li>£25</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Advanced" data-time="Under2" data-price="35">
+                        <a class="tile" href="">
+                            <img src="img/feature-wall.jpg" alt="Dimmer switch on a painted wall">
+                            <p>Electrics</p>
+                            <h4>Swap a light switch for a dimmer</h4>
+                            <ul>
+                                <li>Advanced</li>
+                                <li>1 Hour</li>
+                                <li>£35</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Beginner" data-time="HalfDay" data-price="40">
+                        <a class="tile" href="">
+                            <img src="img/feature-wall.jpg" alt="Freshly painted kitchen cupboards">
+                            <p>Decorating</p>
+                            <h4>Paint tired kitchen cupboard doors</h4>
+                            <ul>
+                                <li>Beginner</li>
+                                <li>5 Hours</li>
+                                <li>£40</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Beginner" data-time="HalfDay" data-price="30">
+                        <a class="tile" href="">
+                            <img src="img/raised-bed.jpeg" alt="Herbs growing in pots">
+                            <p>Garden</p>
+                            <h4>Plant a patio herb garden in pots</h4>
+                            <ul>
+                                <li>Beginner</li>
+                                <li>3 Hours</li>
+                                <li>£30</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Intermediate" data-time="HalfDay" data-price="110">
+                        <a class="tile" href="">
+                            <img src="img/shower-regrout.jpg" alt="Tiled bathroom splashback">
+                            <p>Bathroom</p>
+                            <h4>Tile a splashback behind the sink</h4>
+                            <ul>
+                                <li>Intermediate</li>
+                                <li>4 Hours</li>
+                                <li>£110</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Intermediate" data-time="HalfDay" data-price="150">
+                        <a class="tile" href="">
+                            <img src="img/raised-bed.jpeg" alt="Stepping stones across a lawn">
+                            <p>Garden</p>
+                            <h4>Lay a stepping stone path across the lawn</h4>
+                            <ul>
+                                <li>Intermediate</li>
+                                <li>4 Hours</li>
+                                <li>£150</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Advanced" data-time="HalfDay" data-price="85">
+                        <a class="tile" href="">
+                            <img src="img/shower-regrout.jpg" alt="Boxed-in bathroom pipework">
+                            <p>Bathroom</p>
+                            <h4>Box in exposed pipework</h4>
+                            <ul>
+                                <li>Advanced</li>
+                                <li>5 Hours</li>
+                                <li>£85</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Advanced" data-time="HalfDay" data-price="300">
+                        <a class="tile" href="">
+                            <img src="img/hero-finished-project.jpg" alt="New wooden kitchen worktop">
+                            <p>Kitchen</p>
+                            <h4>Cut and fit a new kitchen worktop</h4>
+                            <ul>
+                                <li>Advanced</li>
+                                <li>6 Hours</li>
+                                <li>£300</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Intermediate" data-time="Weekend" data-price="480">
+                        <a class="tile" href="">
+                            <img src="img/alcove-shelving.jpg" alt="Built-in wardrobe in an alcove">
+                            <p>Storage</p>
+                            <h4>Build a fitted wardrobe into an alcove</h4>
+                            <ul>
+                                <li>Intermediate</li>
+                                <li>2 Days</li>
+                                <li>£480</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Advanced" data-time="Weekend" data-price="380">
+                        <a class="tile" href="">
+                            <img src="img/shower-regrout.jpg" alt="Newly tiled bathroom floor">
+                            <p>Flooring</p>
+                            <h4>Retile a bathroom floor</h4>
+                            <ul>
+                                <li>Advanced</li>
+                                <li>2 Days</li>
+                                <li>£380</li>
+                            </ul>
+                        </a>
+                    </article>
+                    <article class="project-tile" data-difficulty="Advanced" data-time="Weekend" data-price="650">
+                        <a class="tile" href="">
+                            <img src="img/raised-bed.jpeg" alt="Timber garden deck">
+                            <p>Garden</p>
+                            <h4>Build a timber deck for the garden</h4>
+                            <ul>
+                                <li>Advanced</li>
+                                <li>2 Days</li>
+                                <li>£650</li>
+                            </ul>
+                        </a>
+                    </article>
+                </section>
+                <button type="button" id="load-more" class="load-more">Load More</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-area">
+    <footer>
+        <div class="footer-brand">
+            <h4>Homehub</h4>
+            <p>Home improvement ideas shared by the community</p>
+        </div>
+        <div class="footer-links">
+        <ul class="explore-footer">
+            <li><b>Explore</b></li>
+            <li><a>Projects</a></li>
+            <li><a>Categories</a></li>
+            <li><a>Q&A</a></li>
+        </ul>
+        <ul class="help-footer">
+            <li><b>Help</b></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Safety guidence</a></li>
+            <li><a>Accessibility</a></li>
+        </ul>
+        <ul class="account-footer">
+            <li><b>Account</b></li>
+            <li><a href="log_in.html">Log in</a></li>
+            <li><a>Register</a></li>
+        </ul>
+        </div>
+
+    </footer>
+</body>
+</html>

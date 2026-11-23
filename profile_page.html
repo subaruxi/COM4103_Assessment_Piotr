@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/nav.js" defer></script>
+    <script src="js/saved.js" defer></script>
     <title>Homehub Log in</title>
 </head>
 <body>
@@ -16,7 +18,7 @@
     <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
     <ul id="nav-menu">
         <li><a href="#">Explore</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="#">Q&A</a></li>
         <li><a href="#">Saved</a></li>
         <li class="search-bar"><input type="search" placeholder="Search.."><button class="submit-tip"><img src=>Submit a Tip</button><a class="log-in" href="log_in.html">Log In</a></li>
@@ -45,68 +47,8 @@
 </div>
 <div class="saved-projects" id="saved-projects">
     <h3>Saved Projects</h3>
+    <p id="no-saved" hidden>You haven't saved any projects yet. <a href="projects.html">Browse projects</a> and press Save on any you like.</p>
     <div class="tile-row">
-        <a class="tile" href="">
-            <img src="img/shower-regrout.jpg" alt="Re-grouted shower">
-            <p>Bathroom</p>
-            <h4>Re-grout a shower in an afternoon</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>2 Hours</li>
-                <li>£90</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/raised-bed.jpeg" alt="Raised vegetable bed">
-            <p>Garden</p>
-            <h4>Grow your own veg in a raised planter</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>4 Hours</li>
-                <li>£60</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/feature-wall.jpg" alt="Painted feature wall">
-            <p>Decorating</p>
-            <h4>Choose and paint a bold accent colour</h4>
-            <ul>
-                <li>Intermediate</li>
-                <li>1 Day</li>
-                <li>£45</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/alcove-shelving.jpg" alt="Shelving fitted in an alcove">
-            <p>Storage</p>
-            <h4>Fit floating shelves beside a chimney</h4>
-            <ul>
-                <li>Advanced</li>
-                <li>2 Days</li>
-                <li>£120</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/hero-finished-project.jpg" alt="Finished home improvement project">
-            <p>Flooring</p>
-            <h4>Lay click-fit laminate in a bedroom</h4>
-            <ul>
-                <li>Intermediate</li>
-                <li>1 Day</li>
-                <li>£250</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/shower-regrout.jpg" alt="Bathroom with sealed bath edge">
-            <p>Bathroom</p>
-            <h4>Reseal a bath with fresh silicone</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>1 Hour</li>
-                <li>£15</li>
-            </ul>
-        </a>
-
     </div>
 </div>
 <div class="recommended-projects" id="recommended-projects">
@@ -281,7 +223,7 @@
 </div>
 
 <script>
-    const username = sessionStorage.getItem("currentUser");
+    const username = localStorage.getItem("currentUser");
     document.getElementById('display-name').textContent = username
 
     const sectionButtons = document.querySelectorAll('.section-select button');
