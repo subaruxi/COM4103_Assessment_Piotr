@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/nav.js" defer></script>
+    <script src="js/saved.js" defer></script>
+    <script src="js/project-data.js" defer></script>
+    <script src="js/project-page.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <title>HomeHub</title>
+</head>
+<body>
+    <nav class="navigation-pane">
+    <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
+    <ul id="nav-menu">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="qa.html">Q&A</a></li>
+        <li><a href="profile_page.html#saved-projects">Saved</a></li>
+        <li class="search-bar"><input type="search" placeholder="Search.."><button class="submit-tip"><img src=>Submit a Tip</button><a class="log-in" href="log_in.html">Log In</a></li>
+    </ul>
+</nav>
+<div class="project-header">
+    <h2 id="project-title">Project Title</h2>
+    <div class="published">
+        <p id="author">Author</p>
+        <p id="date">23 Nov 2026</p>
+        <p id="updated">Updated :</p>
+    </div>
+    <div class="tags-section">
+        <p id="project-difficulty">Difficulty</p>
+        <p id="project-time">Time</p>
+        <p id="project-cost">Cost</p>
+    </div>
+    <div class="header-buttons">
+        <button id="save-button">Save</button>
+        <button id="helpful-button">Helpful</button>
+        <button id="share-button">Share</button>
+        <button id="report-button">Report</button>
+    </div>
+</div>
+<hr>
+<div class="project-content">
+    <div class="main-content">
+        <section class="photo-section" aria-labelledby="photos-heading">
+            <h3 id="photos-heading">Photos</h3>
+            <div class="photo-viewer">
+                <button class="photo-arrow" id="photo-prev" aria-label="Previous photo">&lsaquo;</button>
+                <div class="main-photo-area">
+                    <img id="main-photo" src="img/shower-regrout.jpg" alt="Freshly re-grouted shower">
+                    <span id="photo-counter">Photo 1 of 5 (click to enlarge)</span>
+                </div>
+                <button class="photo-arrow" id="photo-next" aria-label="Next photo">&rsaquo;</button>
+            </div>
+            <div class="photo-thumbs">
+                <img class="active" src="img/shower-regrout.jpg" alt="Freshly re-grouted shower">
+                <img src="img/feature-wall.jpg" alt="Placeholder photo 2">
+                <img src="img/alcove-shelving.jpg" alt="Placeholder photo 3">
+                <img src="img/hero-finished-project.jpg" alt="Placeholder photo 4">
+                <img src="img/raised-bed.jpeg" alt="Placeholder photo 5">
+            </div>
+
+            <!-- Enlarged view, opened by clicking the main photo -->
+            <dialog id="photo-lightbox">
+                <img id="lightbox-photo" src="img/shower-regrout.jpg" alt="Freshly re-grouted shower">
+            </dialog>
+        </section>
+        <section class="steps" id="steps">
+            <h3>Steps</h3>
+            <!-- Steps are added here by project-page.js -->
+            <div id="step-list"></div>
+        </section>
+        <section class="comments" id="comments">
+            <h3>Comments</h3>
+            <textarea id="comment-input" name="comment" placeholder="Write your comment here"></textarea>
+            <button id="comment-submit">Submit Comment</button>
+            <!-- Comments are added here by project-page.js -->
+            <div id="comment-list"></div>
+        </section>
+    </div>
+    <!-- Each side section is filled in by project-page.js -->
+    <div class="side-content">
+        <section class="contents-table">
+        </section>
+        <section class="cost-materials" id="cost-materials">
+        </section>
+        <section class="cost-calculator" id="cost-calculator">
+        </section>
+        <section class="question-section" id="questions">
+        </section>
+    </div>
+</div>
+    <div class="footer-area">
+    <footer>
+        <div class="footer-brand">
+            <h4>Homehub</h4>
+            <p>Home improvement ideas shared by the community</p>
+        </div>
+        <div class="footer-links">
+        <ul class="explore-footer">
+            <li><b>Explore</b></li>
+            <li><a>Projects</a></li>
+            <li><a>Categories</a></li>
+            <li><a href="qa.html">Q&A</a></li>
+        </ul>
+        <ul class="help-footer">
+            <li><b>Help</b></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Safety guidence</a></li>
+            <li><a>Accessibility</a></li>
+        </ul>
+        <ul class="account-footer">
+            <li><b>Account</b></li>
+            <li><a href="log_in.html">Log in</a></li>
+            <li><a>Register</a></li>
+        </ul>
+        </div>
+
+    </footer>
+
+</body>
+</html>

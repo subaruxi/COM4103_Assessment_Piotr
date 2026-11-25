@@ -52,6 +52,7 @@ function readProjectFromTile(article) {
     });
 
     return {
+        link: article.querySelector("a").getAttribute("href"),
         title: article.querySelector("h4").textContent,
         category: article.querySelector("p").textContent,
         image: image.getAttribute("src"),
@@ -112,7 +113,8 @@ function addSaveButtons() {
 function buildTile(project) {
     var link = document.createElement("a");
     link.className = "tile";
-    link.href = "";
+    // Projects saved before project pages existed won't have a link
+    link.href = project.link || "projects.html";
 
     var image = document.createElement("img");
     image.src = project.image;
@@ -178,5 +180,17 @@ document.addEventListener("DOMContentLoaded", function () {
     var savedSection = document.getElementById("saved-projects");
     if (savedSection) {
         showSavedProjects(savedSection);
+
+        // The nav bar's "Saved" link goes to profile_page.html#saved-projects.
+        // If another tab (e.g. My Tips) is open on the profile page,
+        // click the "Saved" tab so the saved projects are shown.
+        var savedTab = document.getElementById("saved");
+        document.querySelectorAll('a[href$="#saved-projects"]').forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (savedTab) {
+                    savedTab.click();
+                }
+            });
+        });
     }
 });

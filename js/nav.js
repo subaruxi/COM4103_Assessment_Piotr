@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var loginLink = document.querySelector("#nav-menu .log-in");
     var loggedIn = localStorage.getItem("userEmail") !== null;
 
+    // Saved projects belong to an account, so the "Saved" link
+    // goes to the login page for anyone who isn't logged in
+    if (!loggedIn) {
+        document.querySelectorAll('#nav-menu a[href$="#saved-projects"]').forEach(function (link) {
+            link.href = "log_in.html";
+        });
+    }
+
     if (loginLink && loggedIn) {
         loginLink.remove();
         var navArea = document.querySelector("#nav-menu .search-bar");
@@ -44,4 +52,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         navArea.appendChild(logOutLink);
     }
+
+    // Menu button for phones and tablets.
+    // CSS only shows it on small screens, where the menu starts hidden.
+    var nav = document.querySelector(".navigation-pane");
+    var menu = document.getElementById("nav-menu");
+
+    var menuButton = document.createElement("button");
+    menuButton.className = "menu-toggle";
+    menuButton.textContent = "☰";
+    menuButton.setAttribute("aria-label", "Open menu");
+    menuButton.setAttribute("aria-controls", "nav-menu");
+    menuButton.setAttribute("aria-expanded", "false");
+    nav.insertBefore(menuButton, menu);
+
+    menuButton.addEventListener("click", function () {
+        var isOpen = nav.classList.toggle("menu-open");
+        menuButton.textContent = isOpen ? "✕" : "☰";
+        menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        menuButton.setAttribute("aria-expanded", isOpen);
+    });
 });

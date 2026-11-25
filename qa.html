@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/nav.js" defer></script>
+    <script src="js/qa.js" defer></script>
+    <title>HomeHub Q&A</title>
+</head>
+<body>
+    <nav class="navigation-pane">
+        <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
+        <ul id="nav-menu">
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="qa.html">Q&A</a></li>
+            <li><a href="profile_page.html#saved-projects">Saved</a></li>
+            <li class="search-bar">
+                <input type="search" placeholder="Search..">
+                <button class="submit-tip"><img src=>Submit a Tip</button>
+                <a class="log-in" href="log_in.html">Log In</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="explore-header">
+        <p>Home > Q&A ></p>
+        <h2>Questions & Answers</h2>
+        <p>Stuck on a project? Ask the HomeHub community, or help someone else out with an answer.</p>
+        <hr>
+        <div class="qa-area">
+            <!-- Form for posting a new question -->
+            <form id="question-form" class="qa-box ask-form">
+                <h3>Ask a Question</h3>
+                <label for="question-title">Question</label>
+                <input type="text" id="question-title" placeholder="e.g. How do I fix a dripping tap?" required>
+                <label for="question-category">Category</label>
+                <select id="question-category">
+                    <option>Bathroom</option>
+                    <option>Garden</option>
+                    <option>Decorating</option>
+                    <option>Storage</option>
+                    <option>Flooring</option>
+                    <option>Kitchen</option>
+                    <option>Electrics</option>
+                </select>
+                <label for="question-details">Details</label>
+                <textarea id="question-details" placeholder="Tell people what you've tried and what's going wrong" required></textarea>
+                <button type="submit">Post Question</button>
+            </form>
+
+            <!-- Questions and their answers are added here by qa.js -->
+            <section class="question-list">
+                <h3>Latest Questions</h3>
+                <div id="questions"></div>
+            </section>
+        </div>
+    </div>
+    <div class="footer-area">
+        <footer>
+            <div class="footer-brand">
+                <h4>Homehub</h4>
+                <p>Home improvement ideas shared by the community</p>
+            </div>
+            <div class="footer-links">
+                <ul class="explore-footer">
+                    <li><b>Explore</b></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a>Categories</a></li>
+                    <li><a href="qa.html">Q&A</a></li>
+                </ul>
+                <ul class="help-footer">
+                    <li><b>Help</b></li>
+                    <li><a>About</a></li>
+                    <li><a>Contact</a></li>
+                    <li><a>Safety guidence</a></li>
+                    <li><a>Accessibility</a></li>
+                </ul>
+                <ul class="account-footer">
+                    <li><b>Account</b></li>
+                    <li><a href="log_in.html">Log in</a></li>
+                    <li><a>Register</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

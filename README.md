@@ -56,7 +56,7 @@ TODO: record any feature you drop or replace, the date, and why. The brief requi
 
 | Date | Removed | Replaced with | Justification |
 |------|---------|---------------|---------------|
-| TODO | | | |
+| 24/11/26 |F14 Before and After|N/A |Before and after images are difficult to find on the internet, programming the before and after slider can also prove to be difficult as well, it can take up a large amount of time on the project trying to learn how to do it. |
 
 ---
 
@@ -264,9 +264,19 @@ TODO: what changed from your original timeline, what challenges you faced and ho
 I used generative AI (Claude, Anthropic) to:
 - suggest a task breakdown and Gantt chart structure for the project plan, which I reviewed and adjusted;
 - summarise the assessment brief and list the PRD feature catalogue, to aid my understanding;
+- provide websites to reaserch
 - generate wireframes for the website in figma.
 - assist with the alignment of elements in the website inside of the code, teaching me how to align items in the code
-- draft the structure of this README. The content, justifications and reflections are my own.
+- create the Q&A page of the assignment using my design elements that i used in the other web pages
+- create javascript for the website when needed to make the website more efficient and have functions working
+- create the photo spotlights for the project-detail page
+- create filters for the project page using javascript
+- create fake data for the website
+- reuse design elements that i made across the website 
+- create a responsive design for the website to be used across mobile and tablet devices
+- create a hamburger menu for mobile devices 
+- draft the structure of this README. The content
+justifications and reflections are my own.
 
 TODO: add any other use (for example help debugging code or understanding a concept) and confirm the statement for the work you actually submit.
 
