@@ -9,6 +9,26 @@ document.addEventListener("DOMContentLoaded", function () {
     var loadMoreButton = document.getElementById("load-more");
     var categoryTabs = document.querySelectorAll(".category-tab");
     var sortSelect = document.getElementById("sort-order");
+    var searchInput = document.getElementById("search-bar-projects");
+    var searchButton = document.querySelector(".search-area .search-button");
+
+    // A search can arrive in the link, e.g. projects.html?search=Raised%20Bed
+    // (used by the "Popular" tags on the home page)
+    var searchFromLink = new URLSearchParams(window.location.search).get("search");
+    if (searchFromLink) {
+        searchInput.value = searchFromLink;
+    }
+
+    // A tile matches if every word typed appears in its title or category
+    function matchesSearch(tile) {
+        var words = searchInput.value.toLowerCase().split(" ").filter(function (word) {
+            return word !== "";
+        });
+        var text = (tile.querySelector("h4").textContent + " " + getCategory(tile)).toLowerCase();
+        return words.every(function (word) {
+            return text.includes(word);
+        });
+    }
 
     // Turn the tiles into a normal array so they can be sorted.
     // The original position is remembered so "Featured" can put them back.
@@ -103,8 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
             var difficultyMatches = difficulties.length === 0 || difficulties.includes(tile.dataset.difficulty);
             var timeMatches = times.length === 0 || times.includes(tile.dataset.time);
             var priceMatches = Number(tile.dataset.price) <= maxPrice;
+            var searchMatches = matchesSearch(tile);
 
-            if (categoryMatches && difficultyMatches && timeMatches && priceMatches) {
+            if (categoryMatches && difficultyMatches && timeMatches && priceMatches && searchMatches) {
                 matchCount++;
                 // Only show this match if it fits within the current limit
                 tile.hidden = matchCount > visibleLimit;
@@ -153,6 +174,28 @@ document.addEventListener("DOMContentLoaded", function () {
             restartFilters();
         });
     });
+
+    // The X button only shows when there's something to clear
+    var clearButton = document.getElementById("clear-search");
+    function updateClearButton() {
+        clearButton.hidden = searchInput.value === "";
+    }
+
+    // Results update as you type; the Search button does the same
+    searchInput.addEventListener("input", function () {
+        updateClearButton();
+        restartFilters();
+    });
+    searchButton.addEventListener("click", restartFilters);
+
+    // X button empties the search bar and shows all projects again
+    clearButton.addEventListener("click", function () {
+        searchInput.value = "";
+        updateClearButton();
+        restartFilters();
+        searchInput.focus();
+    });
+    updateClearButton();
 
     sortSelect.addEventListener("change", function () {
         sortTiles();

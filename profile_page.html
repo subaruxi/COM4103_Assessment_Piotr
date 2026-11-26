@@ -11,13 +11,15 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/nav.js" defer></script>
     <script src="js/saved.js" defer></script>
+    <script src="js/project-data.js" defer></script>
+    <script src="js/recommended.js" defer></script>
+    <script src="js/tips.js" defer></script>
     <title>Homehub Log in</title>
 </head>
 <body>
     <nav class="navigation-pane">
     <a class="logo" href="home_page.html"><img src="img/Logo 40px.svg" alt="HomeHub logo"></a>
     <ul id="nav-menu">
-        <li><a href="#">Explore</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="qa.html">Q&A</a></li>
         <li><a href="profile_page.html#saved-projects">Saved</a></li>
@@ -31,9 +33,9 @@
         <h3 id='display-name'></h3>
         <p>Add a Bio</p>
         <ul>
-            <li>5 Tips Shared</li>
+            <li id="tips-count">0 Tips Shared</li>
             <li>32 helpful votes recieved</li>
-            <li>8 Saved</li>
+            <li id="saved-count">0 Saved</li>
         </ul>
         <button class="edit-profile" id="edit-profile-button">Edit Profile</button>
     </div>
@@ -53,123 +55,15 @@
 </div>
 <div class="recommended-projects" id="recommended-projects">
     <h3>Recommended Projects</h3>
-        <div class="tile-row">
-        <a class="tile" href="">
-            <img src="img/shower-regrout.jpg" alt="Re-grouted shower">
-            <p>Bathroom</p>
-            <h4>Re-grout a shower in an afternoon</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>2 Hours</li>
-                <li>£90</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/raised-bed.jpeg" alt="Raised vegetable bed">
-            <p>Garden</p>
-            <h4>Grow your own veg in a raised planter</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>4 Hours</li>
-                <li>£60</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/feature-wall.jpg" alt="Painted feature wall">
-            <p>Decorating</p>
-            <h4>Choose and paint a bold accent colour</h4>
-            <ul>
-                <li>Intermediate</li>
-                <li>1 Day</li>
-                <li>£45</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/alcove-shelving.jpg" alt="Shelving fitted in an alcove">
-            <p>Storage</p>
-            <h4>Fit floating shelves beside a chimney</h4>
-            <ul>
-                <li>Advanced</li>
-                <li>2 Days</li>
-                <li>£120</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/hero-finished-project.jpg" alt="Finished home improvement project">
-            <p>Flooring</p>
-            <h4>Lay click-fit laminate in a bedroom</h4>
-            <ul>
-                <li>Intermediate</li>
-                <li>1 Day</li>
-                <li>£250</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/shower-regrout.jpg" alt="Bathroom with sealed bath edge">
-            <p>Bathroom</p>
-            <h4>Reseal a bath with fresh silicone</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>1 Hour</li>
-                <li>£15</li>
-            </ul>
-        </a>
-
+    <!-- Filled with random projects from js/project-data.js by js/recommended.js -->
+    <div class="tile-row">
     </div>
 </div>
 <div class="my-tips" id="my-tips-section" hidden>
     <h3>My Tips</h3>
+    <p id="no-tips">You haven't shared any tips yet. Press Submit a Tip to share your first one.</p>
+    <!-- Filled with the user's tips from localStorage by js/tips.js -->
     <div class="tile-row">
-        <a class="tile" href="">
-            <img src="img/shower-regrout.jpg" alt="Cleaned shower grout">
-            <p>Bathroom</p>
-            <h4>Lift mould from grout with a baking soda paste</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>30 Mins</li>
-                <li>£5</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/raised-bed.jpeg" alt="Raised vegetable bed">
-            <p>Garden</p>
-            <h4>Line a raised bed to stop timber rotting</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>1 Hour</li>
-                <li>£20</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/feature-wall.jpg" alt="Painted feature wall">
-            <p>Decorating</p>
-            <h4>Get crisp paint lines with decorator's caulk</h4>
-            <ul>
-                <li>Intermediate</li>
-                <li>2 Hours</li>
-                <li>£10</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/alcove-shelving.jpg" alt="Shelving fitted in an alcove">
-            <p>Storage</p>
-            <h4>Find studs and cables before drilling a wall</h4>
-            <ul>
-                <li>Beginner</li>
-                <li>15 Mins</li>
-                <li>£0</li>
-            </ul>
-        </a>
-        <a class="tile" href="">
-            <img src="img/hero-finished-project.jpg" alt="Finished laminate floor">
-            <p>Flooring</p>
-            <h4>Leave an expansion gap when laying laminate</h4>
-            <ul>
-                <li>Intermediate</li>
-                <li>10 Mins</li>
-                <li>£0</li>
-            </ul>
-        </a>
     </div>
 </div>
 <div class="my-questions" id="my-questions-section" hidden>

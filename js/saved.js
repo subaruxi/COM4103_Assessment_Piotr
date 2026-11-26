@@ -156,11 +156,17 @@ function buildTile(project) {
     return wrapper;
 }
 
-// Shows the "You haven't saved any projects yet" message when the row is empty
+// Shows the "You haven't saved any projects yet" message when the row is empty,
+// and keeps the "Saved" count in the profile header up to date
 function updateEmptyMessage() {
     var message = document.getElementById("no-saved");
     var tileCount = document.querySelectorAll("#saved-projects .saved-tile").length;
     message.hidden = tileCount > 0;
+
+    var count = document.getElementById("saved-count");
+    if (count) {
+        count.textContent = tileCount + " Saved";
+    }
 }
 
 function showSavedProjects(section) {

@@ -65,8 +65,8 @@ TODO: record any feature you drop or replace, the date, and why. The brief requi
 **Requirements:** a modern browser (TODO list the ones you tested). No build step or server is needed.
 
 1. Download or clone the repository: `git clone TODO-repo-url`
-2. Open `index.html` in a browser, or use the VS Code *Live Server* extension.
-3. TODO: describe how to move around the prototype and any demo logins.
+2. Open `home_page.html` in a browser, or use the VS Code *Live Preview / Live Server* extension.
+3. Start at the home page and move around the website to see the different features, if you want to sign up you can use any name as of now as the sign ups are stored in the `localStorage`
 
 **Folder structure**
 
@@ -232,7 +232,7 @@ TODO: cover each of these in your own words.
 
 ## 12. Version control
 
-**Repository:** TODO link
+**Repository:** [Commits](https://github.com/subaruxi/COM4103_Assessment_Piotr/commits/main/)
 TODO: summarise your branching approach and commit style, and add screenshots of the commit history (`images/git-log.png`).
 
 ---

@@ -46,8 +46,10 @@
             <input type="text" id="email" name="email" placeholder="Email" required><br>
             <h4>Password</h4>
             <input type="password" id="password" name="password" placeholder="Password" required><br>
-            <input type="checkbox" id="guidelines" name="guidelines" required>
-            <label for="guidelines">I Agree to the community guidelines</label><br><br>
+            <div class="checkbox-row">
+                <input type="checkbox" id="guidelines" name="guidelines" required>
+                <label for="guidelines">I Agree to the community guidelines</label>
+            </div><br>
             <button type="submit" class="continue-login">Continue -></button><br><br>
         </form>
         <form id="login-form">
@@ -57,11 +59,23 @@
             <input type="text" id="email" name="email" placeholder="Email" required><br>
             <h4>Password</h4>
             <input type="password" id="password" name="password" placeholder="password" required><br>
-            <input type="checkbox" id="retainlogin" name="retainlogin">
-            <label for="retainlogin">Keep me Logged in</label><br><br> 
+            <a href="#" class="forgot-password" id="show-forgot">Forgot password?</a><br>
+            <div class="checkbox-row">
+                <input type="checkbox" id="retainlogin" name="retainlogin">
+                <label for="retainlogin">Keep me Logged in</label>
+            </div><br>
             <button type="submit" class="continue-login">Continue -></button><br><br>
         </form>
-        
+        <form id="forgot-form" hidden>
+            <h4>Reset your password</h4>
+            <hr>
+            <p>Enter the email you signed up with and we'll send you a link to reset your password.</p>
+            <h4>Email</h4>
+            <input type="email" id="reset-email" name="reset-email" placeholder="Email" required><br><br>
+            <button type="submit" class="continue-login">Send reset link</button><br><br>
+            <p id="reset-message" role="status" hidden></p>
+            <a href="#" class="forgot-password" id="back-to-login">Back to log in</a><br><br>
+        </form>
     </div>
 
 </div>
@@ -99,14 +113,41 @@
         const  signupForm = document.getElementById("signup-form");
         const  loginButton = document.getElementById("show-login");
         const  signupButton = document.getElementById("show-signup");
+        const  forgotForm = document.getElementById("forgot-form");
+        const  resetMessage = document.getElementById("reset-message");
+
+        // "Forgot password?" swaps the login form for the reset form
+        document.getElementById("show-forgot").addEventListener("click", (event) => {
+            event.preventDefault();
+            loginForm.hidden = true;
+            forgotForm.hidden = false;
+            resetMessage.hidden = true;
+            // Copy over anything already typed in the login email box
+            document.getElementById("reset-email").value = loginForm.querySelector('[name="email"]').value;
+        });
+        document.getElementById("back-to-login").addEventListener("click", (event) => {
+            event.preventDefault();
+            forgotForm.hidden = true;
+            loginForm.hidden = false;
+        });
+        // There's no server to send emails, so just confirm on the page
+        forgotForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const email = document.getElementById("reset-email").value;
+            resetMessage.textContent = "If an account exists for " + email + ", a reset link has been sent.";
+            resetMessage.hidden = false;
+        });
+
         loginButton.addEventListener("click",() =>{
             loginForm.hidden = false;
             signupForm.hidden = true;
+            forgotForm.hidden = true;
             loginButton.classList.add("active");
             signupButton.classList.remove("active");
         });
         signupButton.addEventListener("click",() =>{
             loginForm.hidden = true;
+            forgotForm.hidden = true;
             signupForm.hidden = false;
             signupButton.classList.add("active");
             loginButton.classList.remove("active");

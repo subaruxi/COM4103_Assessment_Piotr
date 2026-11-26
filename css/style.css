@@ -606,6 +606,30 @@ h1, h2, h3, h4, h5, h6{
         padding:5px;
         transition: box-shadow 0.2s ease;
     }
+    #reset-email{
+        border-radius:5px;
+        border:none;
+        padding:5px;
+        transition: box-shadow 0.2s ease;
+    }
+    #reset-email:focus{
+        outline:none;
+        box-shadow: 0 6px 16px rgba(24, 31, 28, 0.18);
+    }
+    .forgot-password{
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 0.9em;
+        color: #558564;
+        text-decoration: underline;
+    }
+    .forgot-password:hover,
+    .forgot-password:focus{
+        color: #181F1C;
+    }
+    #forgot-form p{
+        padding: 0 10%;
+    }
 
     input[type=text]:focus{
         outline:none;
@@ -820,12 +844,50 @@ h1, h2, h3, h4, h5, h6{
 .explore-header{
     padding: 2% 6% 6%;
 
-    #search-bar-projects{
+    .search-field{
+        position: relative;
+        width: 70%;
         height: 36px;
-        padding: 0 12px;
+    }
+    #search-bar-projects{
+        /* block stops the inline gap below the input, so the box is exactly 36px tall */
+        display: block;
+        box-sizing: border-box;
+        height: 36px;
+        /* Extra space on the right so text doesn't run under the X button */
+        padding: 0 36px 0 12px;
         border: 1px solid;
         border-radius: 5px;
-        width:70%;
+        width: 100%;
+    }
+    /* Hide the browser's own clear button so there aren't two X's */
+    #search-bar-projects::-webkit-search-cancel-button{
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    .search-area .clear-search{
+        position: absolute;
+        top: 5px;
+        right: 6px;
+        width: 26px;
+        height: 26px;
+        padding: 0 0 2px;
+        border-radius: 50%;
+        background-color: transparent;
+        color: #181f1c;
+        font-size: 20px;
+        line-height: 1;
+        /* Centres the × in the circle */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .search-area .clear-search[hidden]{
+        display: none;
+    }
+    .search-area .clear-search:hover,
+    .search-area .clear-search:focus{
+        background-color: rgba(0, 0, 0, 0.08);
     }
     .search-area{
         margin-top: 2%;
@@ -1757,4 +1819,76 @@ html{
     .navigation-pane.menu-open li.search-bar{
         border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
+}
+
+/* Popular search tags on the home page */
+#popular-tags a{
+    color: inherit;
+    text-decoration: underline;
+}
+#popular-tags a:hover,
+#popular-tags a:focus{
+    opacity: 0.75;
+}
+
+/* Custom checkboxes used across the site (login page, project filters):
+   larger, rounded, green with a white tick when checked */
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0 6px 0 0;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 6px;
+    background-color: #fff;
+    vertical-align: middle;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+input[type="checkbox"]:hover{
+    border-color: #558564;
+}
+input[type="checkbox"]:checked{
+    background-color: #558564;
+    border-color: #558564;
+    outline: none;
+}
+/* The tick: a rotated L shape drawn with two borders */
+input[type="checkbox"]:checked::after{
+    content: "";
+    position: absolute;
+    /* Centre the tick in the box, then nudge it up slightly because
+       the point of a tick sits low and makes it look off-centre */
+    left: 50%;
+    top: 45%;
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+/* Space between the last input box and the checkbox on the login / create account forms */
+.checkbox-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+.checkbox-row input[type="checkbox"],
+.checkbox-row label{
+    margin: 0;
+}
+/* Bootstrap adds a focus outline when a checkbox is clicked - remove it */
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active{
+    outline: none;
+}
+/* Keep an outline only for keyboard users tabbing through the page */
+input[type="checkbox"]:focus-visible{
+    outline: 2px solid #558564;
+    outline-offset: 2px;
 }
